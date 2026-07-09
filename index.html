@@ -211,8 +211,6 @@ body::after {
   padding: 2rem 1.5rem 4rem;
   position: relative;
   overflow: hidden;
-  background: var(--claret);
-  color: var(--cream);
 }
 
 .hero-sparkle-tl,
@@ -600,11 +598,11 @@ section { padding: 5.5rem 1.5rem; }
 
 .price-tier-name {
   font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.02rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   letter-spacing: -0.02em;
   color: var(--claret);
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .price-tier-desc { font-size: 0.78rem; color: var(--onyx); opacity: 0.5; }
@@ -612,15 +610,22 @@ section { padding: 5.5rem 1.5rem; }
 .price-amount { text-align: right; flex-shrink: 0; }
 
 .price-value {
-  font-family: var(--display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--claret);
+  font-family: var(--script);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--terracotta);
   white-space: nowrap;
+  line-height: 1.1;
 }
 
-.price-per { font-size: 0.7rem; color: var(--onyx); opacity: 0.45; }
+.price-per {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  color: var(--onyx);
+  opacity: 0.45;
+  margin-top: 0.15rem;
+}
 
 .price-note {
   margin-top: 1.3rem;
@@ -754,6 +759,57 @@ footer {
   .btn { transition: none; }
   .slot.selected svg.crayon-circle ellipse { animation: none; stroke-dashoffset: 0; opacity: 0.75; }
 }
+
+/* ===== HERO VIDEO ===== */
+.hero {
+  background: var(--claret);
+  color: var(--cream);
+  position: relative;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero > *:not(.hero-video) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== ABOUT ME PHOTO ===== */
+.about-me-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.about-me-photo {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+@media (max-width: 640px) {
+  .about-me-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-me-photo {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -799,6 +855,9 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-sparkle-tl">
     <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
   </div>
@@ -816,8 +875,8 @@ footer {
     <span class="script-line">латинатерапия</span>
     индивидуальные занятия
   </h1>
-  <p class="hero-sub">Для тех, кто давно хотел, но не решался. С нуля и без страха 🦢</p>
-  <a href="#schedule" class="btn btn-hero">Выбрать время</a>
+  <p class="hero-sub">Румба, самба, ча-ча-ча — и всё, что между ними.</p>
+  <a href="#schedule" class="btn btn-hero">Записаться</a>
   <div class="scroll-hint"><span></span></div>
 </section>
 
@@ -828,9 +887,57 @@ footer {
       <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
       О занятиях
     </p>
-    <h2 class="section-heading"><span class="script-accent">Чистый лист</span> — лучшее начало</h2>
-    <p>Я провожу индивидуальные уроки латиноамериканских танцев. Занимаемся один на один, в&nbsp;твоём темпе, под музыку, от которой невозможно стоять на месте.</p>
-    <p>С нуля — замечательно. Значит, нет чужих привычек, и&nbsp;мы сразу строим красивое движение. Час или два — и ты уходишь с желанием вернуться.</p>
+    <h2 class="section-heading">Как проходят <span class="script-accent">занятия</span></h2>
+    <p>Один на один, в&nbsp;твоём ритме. Я подбираю программу под тебя — под твой уровень, тело, цели.</p>
+    <p>Если ты никогда не танцевала — отлично. Мы начнём с того, как тело слышит музыку, с&nbsp;пластичности каждой части тела, знакомства со стилем. Если уже есть база — углубимся в&nbsp;технику, стиль, характер.</p>
+    <p>Каждое занятие — это разминка, работа над движением и кусочек хореографии.</p>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#C4A265"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#C4A265"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#C4A265"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#C4A265"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ABOUT ME -->
+<section class="about" id="about-me">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
+      Обо мне
+    </p>
+    <h2 class="section-heading"><span class="script-accent">Ева</span></h2>
+    <div class="about-me-layout">
+      <video autoplay muted loop playsinline class="about-me-photo" style="object-fit:cover;">
+        <source src="about.mp4" type="video/mp4">
+      </video>
+      <div>
+        <p>Три года назад я пришла в латину — и не смогла остановиться. За последний год выросла и&nbsp;в&nbsp;технике, и&nbsp;в&nbsp;том, как чувствую движение. Сейчас преподаю и собираю в&nbsp;своих хореографиях всё, что люблю: базу латины, high heels, партер, иногда хип-хоп — иногда что-то, чему ещё нет названия.</p>
+        <p>Румба — это нежность и медленный огонь. Самба — дерзость и скорость. Ча-ча-ча — чистая любовь к&nbsp;жизни. Мне нравится, что одно направление может передать совершенно разный характер.</p>
+        <p>Занятия для меня — это энергообмен. Я верю, что в&nbsp;каждой уже есть и&nbsp;хрупкость, и&nbsp;сила, и&nbsp;пластика — нужно только дать этому пространство. Я помогу расслабить тело, поймать движение и&nbsp;прийти к&nbsp;тому, за&nbsp;чем ты пришла: уверенность в&nbsp;себе, красивые видео, импровизация или просто час, когда ты ни о&nbsp;чём не думаешь.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#C4A265"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#C4A265"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#C4A265"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#C4A265"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- VIDEO GALLERY -->
+<section class="about" style="padding-top:0;padding-bottom:3rem;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+      <video autoplay muted loop playsinline style="width:100%;border-radius:12px;aspect-ratio:9/16;object-fit:cover;">
+        <source src="hero.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline style="width:100%;border-radius:12px;aspect-ratio:9/16;object-fit:cover;">
+        <source src="gallery.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
@@ -847,12 +954,12 @@ footer {
       <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
       Расписание
     </p>
-    <h2 class="section-heading">Выбери <span class="script-accent">удобное</span> время</h2>
-    <p class="schedule-intro">Нажми на слот, который тебе подходит — я увижу твой выбор и напишу для подтверждения. Обведённые слоты уже кто-то присмотрел.</p>
+    <h2 class="section-heading"><span class="script-accent">Расписание</span></h2>
+    <p class="schedule-intro">Отметь дни и время, которые тебе подходят. Я увижу и напишу, чтобы подтвердить.</p>
 
     <div class="slots-grid" id="slotsGrid"></div>
 
-    <p class="schedule-note">Выбери все подходящие слоты — я увижу твоё расписание и напишу 🦢</p>
+    <p class="schedule-note" style="color:var(--onyx);opacity:0.45;font-size:0.78rem;">Серые слоты уже заняты.</p>
     <div id="selectedSummary" class="selected-summary" style="display:none"></div>
     <div class="schedule-cta">
       <button class="btn" id="confirmBtn" disabled>Выбери слоты</button>
@@ -873,34 +980,34 @@ footer {
       <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
       Как это работает
     </p>
-    <h2 class="section-heading">Четыре шага до <span class="script-accent">первого</span> занятия</h2>
+    <h2 class="section-heading">Как это <span class="script-accent">работает</span></h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <div>
           <p class="step-title">Выбери время</p>
-          <p class="step-desc">Прямо здесь — нажми на удобный слот в расписании.</p>
+          <p class="step-desc">Отметь удобные слоты прямо здесь, на сайте.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
-          <p class="step-title">Подтвердим в директе</p>
-          <p class="step-desc">Я напишу тебе, чтобы договориться окончательно.</p>
+          <p class="step-title">Я напишу тебе</p>
+          <p class="step-desc">В Telegram — согласуем день и отвечу на вопросы.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <p class="step-title">Я забронирую зал</p>
-          <p class="step-desc">Всё возьму на себя — тебе нужно только прийти.</p>
+          <p class="step-title">Зал за мной</p>
+          <p class="step-desc">Забронирую место — тебе только прийти.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div>
           <p class="step-title">Танцуем</p>
-          <p class="step-desc">Приходишь, двигаешься, кайфуешь 🦢</p>
+          <p class="step-desc">Час движения, музыки и полного переключения.</p>
         </div>
       </div>
     </div>
@@ -919,8 +1026,8 @@ footer {
     <div class="price-tiers">
       <div class="price-card">
         <div class="price-info">
-          <p class="price-tier-name">Разовое занятие</p>
-          <p class="price-tier-desc">1 час — попробовать и влюбиться</p>
+          <p class="price-tier-name">Разовое</p>
+          <p class="price-tier-desc">Одно занятие — попробовать</p>
         </div>
         <div class="price-amount">
           <p class="price-value">2 000 ₽/час</p>
@@ -928,8 +1035,8 @@ footer {
       </div>
       <div class="price-card">
         <div class="price-info">
-          <p class="price-tier-name">Абонемент на 4 часа</p>
-          <p class="price-tier-desc">4 занятия в месяц — войти в ритм</p>
+          <p class="price-tier-name">4 занятия</p>
+          <p class="price-tier-desc">Раз в неделю — войти в ритм</p>
         </div>
         <div class="price-amount">
           <p class="price-value">7 500 ₽</p>
@@ -938,8 +1045,8 @@ footer {
       </div>
       <div class="price-card">
         <div class="price-info">
-          <p class="price-tier-name">Абонемент на 8 часов</p>
-          <p class="price-tier-desc">8 занятий — для тех, кто серьёзно</p>
+          <p class="price-tier-name">8 занятий</p>
+          <p class="price-tier-desc">Два раза в неделю — для тех, кто решил впустить мир танцев в свою жизнь</p>
         </div>
         <div class="price-amount">
           <p class="price-value">15 000 ₽</p>
@@ -949,7 +1056,7 @@ footer {
     </div>
 
     <div class="price-note">
-      📍 К стоимости добавляется аренда зала — ~700 ₽/час, зависит от дня и времени. Зал бронирую я, тебе нужно только прийти.
+      + аренда зала ~700 ₽/час (зависит от дня). Зал бронирую я.
     </div>
   </div>
 </section>
@@ -972,17 +1079,17 @@ footer {
       <div class="detail-item">
         <div class="detail-icon">👖</div>
         <p class="detail-title">Одежда</p>
-        <p class="detail-text">Широкие штаны и лёгкий верх — так больше вайба</p>
+        <p class="detail-text">Свободные штаны и топ. Чем проще — тем лучше двигаться.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">👟</div>
         <p class="detail-title">Обувь</p>
-        <p class="detail-text">Носочки или кроссовки — что удобнее</p>
+        <p class="detail-text">Носки, джазовки или кроссовки. Каблуки — если хочешь и умеешь.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">💧</div>
         <p class="detail-title">Вода</p>
-        <p class="detail-text">В зале есть кран — можно набрать на месте</p>
+        <p class="detail-text">В зале есть кран, можно набрать на месте.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">📍</div>
@@ -1002,9 +1109,10 @@ footer {
     <div class="cta-sparkle"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg></div>
   </div>
   <div class="container">
-    <h2 class="section-heading"><span class="script-accent">Готова</span> попробовать?</h2>
-    <p class="cta-sub">Напиши мне — пришлю свободные слоты, выберем удобный день, и начнём 🦢</p>
-    <a href="https://instagram.com/" class="btn btn-cta" target="_blank" rel="noopener">Написать в директ</a>
+    <h2 class="section-heading"><span class="script-accent">Попробуем?</span></h2>
+    <p class="cta-sub">Напиши — подберём время и начнём.</p>
+    <a href="https://t.me/evavasilyyevna" class="btn btn-cta" target="_blank" rel="noopener">Написать в Telegram</a>
+    <a href="https://www.instagram.com/eva.vasilyevna" class="btn btn-cta" target="_blank" rel="noopener" style="background:transparent;border:1px solid rgba(253,245,239,0.3);margin-left:0.5rem;">Instagram</a>
   </div>
 </section>
 
@@ -1015,6 +1123,7 @@ footer {
     <span class="line"></span>
   </div>
   <p>Ева · Индивидуальные занятия латиной · Москва</p>
+  <p style="margin-top:0.4rem;">Telegram: <a href="https://t.me/evavasilyyevna" style="color:inherit;text-decoration:underline;">@evavasilyyevna</a> · Instagram: <a href="https://www.instagram.com/eva.vasilyevna" style="color:inherit;text-decoration:underline;">@eva.vasilyevna</a></p>
 </footer>
 
 <script>
@@ -1125,52 +1234,59 @@ function updateConfirmBtn() {
 
 document.getElementById('confirmBtn').addEventListener('click', async () => {
   if (selectedSlots.length === 0) return;
-  const btn = document.getElementById('confirmBtn');
-  btn.disabled = true;
-  btn.textContent = 'Отправляю...';
-
-  // Group for message
-  const grouped = {};
-  selectedSlots.forEach(s => {
-    if (!grouped[s.date]) grouped[s.date] = { label: s.label, times: [] };
-    grouped[s.date].times.push(s.time);
-  });
-
-  let lines = [];
-  Object.values(grouped).forEach(g => {
-    g.times.sort();
-    lines.push(g.label + ': ' + g.times.join(', '));
-  });
-
-  const msg = 'Привет! Хочу записаться на занятие 🦢\nМне подходят:\n' + lines.join('\n');
-
-  if (GOOGLE_SCRIPT_URL) {
-    try {
-      const name = prompt('Как тебя зовут?') || 'Не указано';
-      const ig = prompt('Твой инстаграм (чтобы я написала)?') || 'Не указано';
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slots: selectedSlots, name, instagram: ig, timestamp: new Date().toISOString() })
-      });
-    } catch (e) { console.error(e); }
-  }
-
-  selectedSlots.forEach(s => takenSlots.push({ date: s.date, time: s.time }));
-  localStorage.setItem('dance_taken', JSON.stringify(takenSlots));
-
-  btn.textContent = '✓ Отправлено!';
-  btn.style.background = '#F26223';
-  selectedSlots = [];
-  renderSlots();
-  updateSummary();
-
-  setTimeout(() => {
-    alert('Спасибо! Я скоро напишу тебе 🦢\n\nСкопируй в директ:\n' + msg);
+  
+  const summaryEl = document.getElementById('selectedSummary');
+  
+  // Check if contact form already exists
+  if (document.getElementById('contactForm')) return;
+  
+  // Show contact form
+  const formHtml = `
+    <div id="contactForm" style="margin-top:1.5rem;background:var(--cream);border-radius:10px;padding:1.4rem;border:1px solid rgba(103,6,38,0.06);">
+      <h3 style="font-family:var(--display);font-weight:600;font-size:0.95rem;color:var(--claret);margin-bottom:0.5rem;letter-spacing:-0.02em;">Готово! Я напишу тебе в Telegram для подтверждения</h3>
+      <p style="font-size:0.82rem;color:var(--onyx);opacity:0.55;margin-bottom:1rem;">Оставь контакт, чтобы я могла связаться:</p>
+      <input id="contactName" type="text" placeholder="Имя" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.5rem;background:var(--cream-dark);outline:none;">
+      <input id="contactTg" type="text" placeholder="Telegram или телефон" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.8rem;background:var(--cream-dark);outline:none;">
+      <button id="sendContactBtn" class="btn" style="width:100%;background:var(--terracotta);color:var(--cream);">Отправить</button>
+    </div>`;
+  
+  summaryEl.insertAdjacentHTML('afterend', formHtml);
+  document.getElementById('contactName').focus();
+  
+  document.getElementById('sendContactBtn').addEventListener('click', async () => {
+    const name = document.getElementById('contactName').value || 'Не указано';
+    const tg = document.getElementById('contactTg').value || 'Не указано';
+    const sendBtn = document.getElementById('sendContactBtn');
+    
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Отправляю...';
+    
+    if (GOOGLE_SCRIPT_URL) {
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slots: selectedSlots, name, contact: tg, timestamp: new Date().toISOString() })
+        });
+      } catch (e) { console.error(e); }
+    }
+    
+    selectedSlots.forEach(s => takenSlots.push({ date: s.date, time: s.time }));
+    localStorage.setItem('dance_taken', JSON.stringify(takenSlots));
+    
+    const form = document.getElementById('contactForm');
+    form.innerHTML = '<p style="text-align:center;padding:1rem;color:var(--claret);font-family:var(--display);font-weight:600;">✓ Отправлено! Я скоро напишу тебе</p>';
+    
+    selectedSlots = [];
+    renderSlots();
+    updateSummary();
+    
+    const btn = document.getElementById('confirmBtn');
     btn.textContent = 'Выбери слоты';
-    btn.style.background = '';
     btn.disabled = true;
-  }, 800);
+    
+    setTimeout(() => { form.remove(); }, 4000);
+  });
 });
 
 try { const s = localStorage.getItem('dance_taken'); if (s) takenSlots = JSON.parse(s); } catch(e) {}
