@@ -50,7 +50,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.08;
+  opacity: 0.2;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='5' stitchTiles='stitch' seed='5'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
   background-size: 256px;
   mix-blend-mode: multiply;
@@ -78,7 +78,7 @@ body::after {
 .disco-wrap {
   position: relative;
   width: 140px;
-  height: 175px;
+  height: 145px;
   margin: 0 auto 1rem;
 }
 
@@ -94,11 +94,11 @@ body::after {
 
 .disco-canvas {
   position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 20px;
+  left: 40%;
+  transform: translateX(-40%);
   animation: disco-pendulum 5s ease-in-out infinite;
-  transform-origin: 50% -35px;
+  transform-origin: 50% -25px;
   filter: drop-shadow(0 0 30px rgba(242,98,35,0.4)) drop-shadow(0 0 60px rgba(242,98,35,0.15));
 }
 
@@ -395,8 +395,8 @@ section { padding: 3rem 1.5rem; }
   padding: 3.5rem 2rem;
 }
 .schedule .container { position: relative; z-index: 1; }
-.schedule .section-label { color: rgba(255,255,255,0.5); }
-.schedule .section-heading { color: #fff; }
+.schedule .section-label { color: var(--terracotta); }
+.schedule .section-heading { color: var(--terracotta); }
 .schedule .section-heading .script-accent { color: var(--terracotta); }
 .schedule .schedule-intro { color: rgba(255,255,255,0.55); }
 .schedule .schedule-note { color: rgba(255,255,255,0.4); }
@@ -1051,7 +1051,7 @@ footer {
 
   <div class="disco-wrap">
     <div class="disco-string"></div>
-    <canvas class="disco-canvas" id="discoBall" width="120" height="120"></canvas>
+    <canvas class="disco-canvas" id="discoBall" width="160" height="160"></canvas>
   </div>
 
   <p class="hero-eyebrow">Москва · Павелецкая</p>
@@ -1631,12 +1631,12 @@ updateConfirmBtn();
   const canvas = document.getElementById('discoBall');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = 120, H = 120, R = 55;
+  const W = 160, H = 160, R = 72;
   const cx = W / 2, cy = H / 2;
 
-  // Sphere tile parameters
-  const latSteps = 12;
-  const lonSteps = 18;
+  // Sphere tile parameters — more tiles = more 3D
+  const latSteps = 20;
+  const lonSteps = 30;
   let rotation = 0;
 
   // Light position (upper-left)
