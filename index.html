@@ -50,7 +50,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.2;
+  opacity: 0.08;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='5' stitchTiles='stitch' seed='5'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
   background-size: 256px;
   mix-blend-mode: multiply;
@@ -76,18 +76,21 @@ body::after {
 
 /* ===== DISCO BALL ===== */
 .disco-wrap {
-  position: relative;
-  width: 140px;
-  height: 145px;
-  margin: 0 auto 1rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 120px;
+  z-index: 2;
 }
 
 .disco-string {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 1.5px;
-  height: 35px;
+  width: 1px;
+  height: 22px;
   background: linear-gradient(to bottom, transparent, var(--gold));
   transform: translateX(-50%);
 }
@@ -95,11 +98,13 @@ body::after {
 .disco-canvas {
   position: absolute;
   top: 20px;
-  left: 40%;
-  transform: translateX(-40%);
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translateX(-50%);
   animation: disco-pendulum 5s ease-in-out infinite;
-  transform-origin: 50% -25px;
-  filter: drop-shadow(0 0 30px rgba(242,98,35,0.4)) drop-shadow(0 0 60px rgba(242,98,35,0.15));
+  transform-origin: 50% -20px;
+  filter: drop-shadow(0 0 20px rgba(242,98,35,0.4)) drop-shadow(0 0 40px rgba(242,98,35,0.15));
 }
 
 @keyframes disco-pendulum {
@@ -1057,7 +1062,7 @@ footer {
   <p class="hero-eyebrow">Москва · Павелецкая</p>
   <h1>
     <span class="script-line">латинатерапия</span>
-    индивидуальные занятия
+    индивидуальные<br>занятия
   </h1>
   <a href="#schedule" class="btn btn-hero">Записаться</a>
   <div class="scroll-hint"><span></span></div>
@@ -1185,10 +1190,7 @@ footer {
 <!-- SCHEDULE -->
 <section class="schedule" id="schedule">
   <div class="container">
-    <p class="section-label">
-      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
-      Расписание
-    </p>
+    <h2 class="section-heading"><span class="script-accent">Расписание</span></h2>
     <p class="schedule-intro">Отметь дни и время, которые тебе подходят. Я увижу и напишу, чтобы подтвердить.</p>
 
     <div class="slots-grid" id="slotsGrid"></div>
@@ -1216,7 +1218,7 @@ footer {
         <div class="step-num">1</div>
         <div>
           <p class="step-title">Выбери время</p>
-          <p class="step-desc">Отметь удобные слоты прямо здесь, на сайте.</p>
+          <p class="step-desc">Отметь удобные слоты прямо на сайте.</p>
         </div>
       </div>
       <div class="step">
@@ -1229,15 +1231,15 @@ footer {
       <div class="step">
         <div class="step-num">3</div>
         <div>
-          <p class="step-title">Зал за мной</p>
-          <p class="step-desc">Забронирую место — тебе только прийти.</p>
+          <p class="step-title">Зал я бронирую сама</p>
+          <p class="step-desc">На твой вкус или мы выберем вместе.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
         <div>
           <p class="step-title">Танцуем</p>
-          <p class="step-desc">Час движения, музыки и полного переключения.</p>
+          <p class="step-desc">Кайфуем час или два, расслабляемся и учим красивые хореографии.</p>
         </div>
       </div>
     </div>
@@ -1271,9 +1273,9 @@ footer {
       <div class="special-card">
         <div class="special-emoji">🎂</div>
         <p class="special-title">МК для компании</p>
-        <p class="special-desc">Девичник, день рождения, корпоратив — танцевальный мастер-класс для вашей компании.</p>
-        <p class="special-price">9 000 ₽</p>
-        <p class="special-price-note">2 часа + аренда зала</p>
+        <p class="special-desc">Девичник, день рождения, корпоратив — танцевальный мастер-класс для вашей компании. До 10 человек. Больше — обсудим индивидуальные условия в ЛС.</p>
+        <p class="special-price">8 000 ₽/час</p>
+        <p class="special-price-note">до 10 человек + аренда зала</p>
       </div>
 
       <div class="special-card card-wide">
@@ -1309,17 +1311,17 @@ footer {
       <div class="detail-item">
         <div class="detail-icon">👖</div>
         <p class="detail-title">Одежда</p>
-        <p class="detail-text">Свободные штаны и топ. Чем проще — тем лучше двигаться.</p>
+        <p class="detail-text">Свободные штаны/лосины и топ.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">👟</div>
         <p class="detail-title">Обувь</p>
-        <p class="detail-text">Носки, джазовки или кроссовки. Каблуки — если хочешь и умеешь.</p>
+        <p class="detail-text">Носочки или кроссовки.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">💧</div>
         <p class="detail-title">Вода</p>
-        <p class="detail-text">В зале есть кран, можно набрать на месте.</p>
+        <p class="detail-text">В зале есть кран, поэтому можно взять бутылку.</p>
       </div>
       <div class="detail-item">
         <div class="detail-icon">📍</div>
