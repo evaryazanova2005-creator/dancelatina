@@ -1183,7 +1183,7 @@ const SCHEDULE = [
   { date: '2025-07-15', label: 'Вт, 15 июля',   times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
 ];
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOV1dm1vuXnmxGAyBj0zIe06fBG-TWVUCOJgkeNTU_cVThWB98QQcx7YuDDv8r1ytNvw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMVS8QtwPCQqXOXdwfx4wkvM7-2qEIB9RLfEOIbdewqwwcEF9r1uGlmgTIYC_RYpxBMA/exec';
 
 let selectedSlots = []; // array of { date, time, label }
 let takenSlots = [];
@@ -1300,13 +1300,16 @@ function updateSummary() {
   el.style.display = 'block';
 }
 
+let formShown = false;
+
 function updateConfirmBtn() {
+  if (formShown) return;
   const btn = document.getElementById('confirmBtn');
   const n = selectedSlots.length;
   if (n > 0) {
     btn.disabled = false;
     const word = n === 1 ? 'слот' : (n < 5 ? 'слота' : 'слотов');
-    btn.textContent = `Отправить ${n} ${word}`;
+    btn.textContent = `Записаться (${n})`;
   } else {
     btn.disabled = true;
     btn.textContent = 'Выбери слоты';
@@ -1316,60 +1319,63 @@ function updateConfirmBtn() {
 document.getElementById('confirmBtn').addEventListener('click', async () => {
   if (selectedSlots.length === 0) return;
   
-  const summaryEl = document.getElementById('selectedSummary');
-  
-  // Check if contact form already exists
-  if (document.getElementById('contactForm')) return;
-  
-  // Show contact form
-  const formHtml = `
-    <div id="contactForm" style="margin-top:1.5rem;background:var(--cream);border-radius:10px;padding:1.4rem;border:1px solid rgba(103,6,38,0.06);">
-      <h3 style="font-family:var(--display);font-weight:600;font-size:0.95rem;color:var(--claret);margin-bottom:0.5rem;letter-spacing:-0.02em;">Готово! Я напишу тебе в Telegram для подтверждения</h3>
-      <p style="font-size:0.82rem;color:var(--onyx);opacity:0.55;margin-bottom:1rem;">Оставь контакт, чтобы я могла связаться:</p>
-      <input id="contactName" type="text" placeholder="Имя" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.5rem;background:var(--cream-dark);outline:none;">
-      <input id="contactTg" type="text" placeholder="Telegram или телефон" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.8rem;background:var(--cream-dark);outline:none;">
-      <button id="sendContactBtn" class="btn" style="width:100%;background:var(--terracotta);color:var(--cream);">Отправить</button>
-    </div>`;
-  
-  summaryEl.insertAdjacentHTML('afterend', formHtml);
-  document.getElementById('contactName').focus();
-  
-  document.getElementById('sendContactBtn').addEventListener('click', async () => {
-    const name = document.getElementById('contactName').value || 'Не указано';
-    const tg = document.getElementById('contactTg').value || 'Не указано';
-    const sendBtn = document.getElementById('sendContactBtn');
+  if (!formShown) {
+    // Show contact form, hide confirm button
+    formShown = true;
+    const ctaDiv = document.querySelector('.schedule-cta');
+    ctaDiv.innerHTML = `
+      <div id="contactForm" style="max-width:400px;margin:0 auto;">
+        <p style="font-family:var(--display);font-weight:600;font-size:0.95rem;color:var(--claret);margin-bottom:0.5rem;text-align:center;">Оставь контакт — я напишу для подтверждения</p>
+        <input id="contactName" type="text" placeholder="Имя" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.5rem;background:var(--cream);outline:none;">
+        <input id="contactTg" type="text" placeholder="Telegram или телефон" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.8rem;background:var(--cream);outline:none;">
+        <button class="btn" id="confirmBtn2" style="width:100%;">Отправить</button>
+      </div>`;
+    document.getElementById('contactName').focus();
     
-    sendBtn.disabled = true;
-    sendBtn.textContent = 'Отправляю...';
-    
-    if (GOOGLE_SCRIPT_URL) {
-      try {
-        await fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ slots: selectedSlots, name, contact: tg, timestamp: new Date().toISOString() })
-        });
-      } catch (e) { console.error(e); }
-    }
-    
-    selectedSlots.forEach(s => takenSlots.push({ date: s.date, time: s.time }));
-    localStorage.setItem('dance_taken', JSON.stringify(takenSlots));
-    
-    const form = document.getElementById('contactForm');
-    form.innerHTML = '<p style="text-align:center;padding:1rem;color:var(--claret);font-family:var(--display);font-weight:600;">✓ Отправлено! Я скоро напишу тебе</p>';
-    
-    selectedSlots = [];
-    renderSlots();
-    updateSummary();
-    
-    const btn = document.getElementById('confirmBtn');
-    btn.textContent = 'Выбери слоты';
-    btn.disabled = true;
-    
-    setTimeout(() => { form.remove(); }, 4000);
-  });
+    document.getElementById('confirmBtn2').addEventListener('click', async () => {
+      const name = document.getElementById('contactName').value || 'Не указано';
+      const tg = document.getElementById('contactTg').value || 'Не указано';
+      const sendBtn = document.getElementById('confirmBtn2');
+      
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Отправляю...';
+      
+      if (GOOGLE_SCRIPT_URL) {
+        try {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST', mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slots: selectedSlots, name, contact: tg, timestamp: new Date().toISOString() })
+          });
+        } catch (e) { console.error(e); }
+      }
+      
+      selectedSlots.forEach(s => takenSlots.push({ date: s.date, time: s.time }));
+      localStorage.setItem('dance_taken', JSON.stringify(takenSlots));
+      
+      const ctaDiv2 = document.querySelector('.schedule-cta');
+      ctaDiv2.innerHTML = '<p style="text-align:center;padding:1rem;color:var(--claret);font-family:var(--display);font-weight:600;">✓ Отправлено! Я скоро напишу тебе</p>';
+      
+      selectedSlots = [];
+      renderSlots();
+      updateSummary();
+      
+      setTimeout(() => {
+        formShown = false;
+        ctaDiv2.innerHTML = '<button class="btn" id="confirmBtn" disabled>Выбери слоты</button>';
+        document.getElementById('confirmBtn').addEventListener('click', arguments.callee);
+      }, 4000);
+    });
+    return;
+  }
 });
 
+// Admin: добавь ?reset к URL чтобы сбросить серые слоты
+if (window.location.search.includes('reset')) {
+  localStorage.removeItem('dance_taken');
+  takenSlots = [];
+  history.replaceState(null, '', window.location.pathname);
+}
 try { const s = localStorage.getItem('dance_taken'); if (s) takenSlots = JSON.parse(s); } catch(e) {}
 
 // Load schedule from Google Sheets if URL is set
@@ -1380,9 +1386,28 @@ async function loadScheduleFromSheets() {
     const data = await resp.json();
     if (Array.isArray(data) && data.length > 0) {
       SCHEDULE.length = 0;
+      const dayNames = ['вс','пн','вт','ср','чт','пт','сб'];
+      const monthNames = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
       data.forEach(d => {
         const dateStr = typeof d.date === 'string' ? d.date : new Date(d.date).toISOString().split('T')[0];
-        SCHEDULE.push({ date: dateStr, label: d.label, times: d.times });
+        // Fix label if it's a raw Date string from Sheets
+        let label = d.label;
+        if (label && (label.includes('GMT') || label.includes('00:00:00'))) {
+          const dt = new Date(dateStr + 'T12:00:00');
+          label = dayNames[dt.getDay()] + ', ' + dt.getDate() + ' ' + monthNames[dt.getMonth()];
+        }
+        // Fix times — if Sheets sent Date objects, extract HH:MM
+        const cleanTimes = d.times.map(t => {
+          if (typeof t === 'string' && t.includes('GMT')) {
+            // "Sat Dec 30 1899 12:00:00 GMT+0230" → extract HH:MM
+            const m = t.match(/(\d{1,2}):(\d{2}):\d{2}/);
+            return m ? m[1].padStart(2,'0') + ':' + m[2] : t;
+          }
+          // "12:00:00" → "12:00"
+          if (typeof t === 'string') return t.replace(/:\d{2}$/, '').trim();
+          return String(t);
+        }).filter(t => t && !t.includes('GMT') && !t.includes('1899'));
+        SCHEDULE.push({ date: dateStr, label: label, times: cleanTimes });
       });
     }
   } catch(e) { console.warn('Sheets load failed, using local schedule:', e); }
