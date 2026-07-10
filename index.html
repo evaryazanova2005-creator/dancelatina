@@ -6,7 +6,8 @@
 <title>Индивидуальные занятия латиной — Ева</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Allura&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/annabelle" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,7 +20,7 @@
   --cream-dark: #F3E8DA;
   --claret-light: #670626;
   --display: 'Playfair Display', Georgia, serif;
-  --script: 'Allura', cursive;
+  --script: 'Annabelle', cursive;
   --body: 'DM Sans', system-ui, sans-serif;
 }
 
@@ -1077,7 +1078,7 @@ footer {
       </div>
       <div class="price-card">
         <div class="price-info">
-          <p class="price-tier-name">4 занятия</p>
+          <p class="price-tier-name">4 часа занятий</p>
           <p class="price-tier-desc">Раз в неделю — войти в ритм</p>
         </div>
         <div class="price-amount">
@@ -1087,7 +1088,7 @@ footer {
       </div>
       <div class="price-card">
         <div class="price-info">
-          <p class="price-tier-name">8 занятий</p>
+          <p class="price-tier-name">8 часов занятий</p>
           <p class="price-tier-desc">Два раза в неделю — для тех, кто решил впустить мир танцев в свою жизнь</p>
         </div>
         <div class="price-amount">
@@ -1179,7 +1180,7 @@ const SCHEDULE = [
   { date: '2025-07-15', label: 'Вт, 15 июля',   times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
 ];
 
-const GOOGLE_SCRIPT_URL = '';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOV1dm1vuXnmxGAyBj0zIe06fBG-TWVUCOJgkeNTU_cVThWB98QQcx7YuDDv8r1ytNvw/exec';
 
 let selectedSlots = []; // array of { date, time, label }
 let takenSlots = [];
@@ -1260,7 +1261,7 @@ function updateCost() {
   }
 
   const total = n * SLOT_PRICE;
-  const word = n === 1 ? 'занятие' : (n < 5 ? 'занятия' : 'занятий');
+  const word = n === 1 ? 'час занятий' : (n < 5 ? 'часа занятий' : 'часов занятий');
   costEl.innerHTML = `
     <span class="cost-label">${n} ${word}</span>
     <span class="cost-value">от ${total.toLocaleString('ru-RU')} ₽</span>
