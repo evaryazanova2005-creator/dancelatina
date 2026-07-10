@@ -338,7 +338,7 @@ body::after {
 
 /* ===== SECTIONS ===== */
 section { padding: 5.5rem 1.5rem; }
-.container { max-width: 660px; margin: 0 auto; }
+.container { max-width: 860px; margin: 0 auto; }
 
 .section-label {
   font-family: var(--body);
@@ -373,7 +373,7 @@ section { padding: 5.5rem 1.5rem; }
 
 /* ===== ABOUT ===== */
 .about { background: var(--cream); }
-.about p { color: var(--onyx); font-size: 1rem; margin-bottom: 1.2rem; opacity: 0.75; }
+.about p { color: var(--onyx); font-size: 1.05rem; margin-bottom: 1.3rem; opacity: 0.75; line-height: 1.65; }
 
 /* ===== SCHEDULE ===== */
 .schedule { background: var(--cream-dark); }
@@ -385,33 +385,76 @@ section { padding: 5.5rem 1.5rem; }
   margin-bottom: 2rem;
 }
 
-.slots-grid { display: grid; gap: 0.6rem; }
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.5rem;
+}
 
 .day-group {
   background: var(--cream);
   border-radius: 10px;
-  padding: 1.2rem 1.4rem;
+  padding: 1rem;
   border: 1px solid rgba(103,6,38,0.06);
+  text-align: center;
 }
 
 .day-header {
   display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  margin-bottom: 0.8rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(103,6,38,0.06);
 }
 
 .day-name {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   letter-spacing: -0.02em;
   color: var(--claret);
 }
 
-.day-date { font-size: 0.78rem; color: var(--onyx); opacity: 0.45; }
+.day-date { font-size: 0.72rem; color: var(--onyx); opacity: 0.45; }
 
-.time-slots { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.time-slots { display: flex; flex-direction: column; gap: 0.3rem; }
+
+/* Cost calculator */
+.cost-summary {
+  margin-top: 1.5rem;
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid rgba(242,98,35,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.cost-label {
+  font-family: var(--body);
+  font-size: 0.85rem;
+  color: var(--onyx);
+  opacity: 0.7;
+}
+
+.cost-value {
+  font-family: var(--script);
+  font-size: 1.8rem;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.cost-note {
+  width: 100%;
+  font-size: 0.72rem;
+  color: var(--onyx);
+  opacity: 0.4;
+}
 
 .slot {
   position: relative;
@@ -773,8 +816,8 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.35;
+  object-position: center 20%;
+  opacity: 0.4;
   z-index: 0;
   pointer-events: none;
 }
@@ -787,8 +830,8 @@ footer {
 /* ===== ABOUT ME PHOTO ===== */
 .about-me-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 380px 1fr;
+  gap: 3rem;
   align-items: start;
   margin-top: 1.5rem;
 }
@@ -800,13 +843,13 @@ footer {
   aspect-ratio: 3/4;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .about-me-layout {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .about-me-photo {
-    max-width: 260px;
+    max-width: 320px;
     margin: 0 auto;
   }
 }
@@ -875,7 +918,7 @@ footer {
     <span class="script-line">латинатерапия</span>
     индивидуальные занятия
   </h1>
-  <p class="hero-sub">Румба, самба, ча-ча-ча — и всё , что между ними.</p>
+  <p class="hero-sub">Румба, самба, ча-ча-ча — и всё, что между ними.</p>
   <a href="#schedule" class="btn btn-hero">Записаться</a>
   <div class="scroll-hint"><span></span></div>
 </section>
@@ -930,7 +973,7 @@ footer {
 <!-- VIDEO GALLERY -->
 <section class="about" style="padding-top:0;padding-bottom:3rem;">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:700px;margin:0 auto;">
       <video autoplay muted loop playsinline style="width:100%;border-radius:12px;aspect-ratio:9/16;object-fit:cover;">
         <source src="hero.mp4" type="video/mp4">
       </video>
@@ -1158,6 +1201,8 @@ function toggleSlot(date, time, label) {
   updateConfirmBtn();
 }
 
+const SLOT_PRICE = 2700; // 2000 занятие + 700 зал (минимум)
+
 function renderSlots() {
   const grid = document.getElementById('slotsGrid');
   grid.innerHTML = '';
@@ -1165,9 +1210,14 @@ function renderSlots() {
   SCHEDULE.forEach(day => {
     const group = document.createElement('div');
     group.className = 'day-group';
+
+    const parts = day.label.split(',');
+    const dayName = parts[0];
+    const dateStr = parts[1]?.trim() || '';
+
     group.innerHTML = `<div class="day-header">
-      <span class="day-name">${day.label.split(',')[0]}</span>
-      <span class="day-date">${day.label.split(',')[1]?.trim() || ''}</span>
+      <span class="day-name">${dayName}</span>
+      <span class="day-date">${dateStr}</span>
     </div>`;
 
     const slotsRow = document.createElement('div');
@@ -1190,6 +1240,34 @@ function renderSlots() {
     group.appendChild(slotsRow);
     grid.appendChild(group);
   });
+
+  updateCost();
+}
+
+function updateCost() {
+  let costEl = document.getElementById('costSummary');
+  const n = selectedSlots.length;
+
+  if (n === 0) {
+    if (costEl) costEl.style.display = 'none';
+    return;
+  }
+
+  if (!costEl) {
+    costEl = document.createElement('div');
+    costEl.id = 'costSummary';
+    costEl.className = 'cost-summary';
+    document.getElementById('slotsGrid').after(costEl);
+  }
+
+  const total = n * SLOT_PRICE;
+  const word = n === 1 ? 'занятие' : (n < 5 ? 'занятия' : 'занятий');
+  costEl.innerHTML = `
+    <span class="cost-label">${n} ${word}</span>
+    <span class="cost-value">от ${total.toLocaleString('ru-RU')} ₽</span>
+    <span class="cost-note">2 000 ₽ занятие + от 700 ₽ аренда зала</span>
+  `;
+  costEl.style.display = 'flex';
 }
 
 function updateSummary() {
