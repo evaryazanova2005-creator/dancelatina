@@ -264,6 +264,14 @@ body::after {
   margin-bottom: 2.5rem;
 }
 
+.hero h1 .hero-subtitle {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .hero h1 .script-line {
   display: block;
   font-family: var(--script);
@@ -968,7 +976,7 @@ footer {
   pointer-events: none;
 }
 
-.hero > *:not(.hero-video) {
+.hero > *:not(.hero-video):not(.disco-wrap) {
   position: relative;
   z-index: 1;
 }
@@ -1062,7 +1070,7 @@ footer {
   <p class="hero-eyebrow">Москва · Павелецкая</p>
   <h1>
     <span class="script-line">латинатерапия</span>
-    индивидуальные<br>занятия
+    <span class="hero-subtitle">индивидуальные<br>занятия</span>
   </h1>
   <a href="#schedule" class="btn btn-hero">Записаться</a>
   <div class="scroll-hint"><span></span></div>
@@ -1282,11 +1290,11 @@ footer {
         <div>
           <div class="special-emoji">🎁</div>
           <p class="special-title">Подарочный сертификат</p>
-          <p class="special-desc">Подари часы танцев — от 4 часов.</p>
+          <p class="special-desc">Подари часы танцев — от 2 часов.</p>
         </div>
         <div style="text-align:right;">
-          <p class="special-price">от 7 400 ₽</p>
-          <p class="special-price-note">от 4 часов</p>
+          <p class="special-price">от 5 400 ₽</p>
+          <p class="special-price-note">от 2 часов · с арендой зала</p>
         </div>
       </div>
     </div>
