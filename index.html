@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3CradialGradient id=%27g%27 cx=%2740%25%27 cy=%2735%25%27%3E%3Cstop offset=%270%25%27 stop-color=%27%23FFB347%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%23F26223%27/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M18 12 Q32 8 46 12 M14 22 Q32 18 50 22 M12 32 Q32 28 52 32 M14 42 Q32 38 50 42 M18 52 Q32 48 46 52%27 stroke=%27%23fff%27 stroke-width=%271.2%27 fill=%27none%27 opacity=%270.4%27/%3E%3Cpath d=%27M22 6 Q24 32 22 58 M32 4 Q34 32 32 60 M42 6 Q40 32 42 58%27 stroke=%27%23fff%27 stroke-width=%271.2%27 fill=%27none%27 opacity=%270.35%27/%3E%3Ccircle cx=%2724%27 cy=%2720%27 r=%272.5%27 fill=%27%23fff%27 opacity=%270.7%27/%3E%3Ccircle cx=%2740%27 cy=%2728%27 r=%272%27 fill=%27%23fff%27 opacity=%270.5%27/%3E%3Ccircle cx=%2728%27 cy=%2740%27 r=%271.8%27 fill=%27%23fff%27 opacity=%270.5%27/%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Индивидуальные занятия латиной — Ева</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -384,7 +385,66 @@ section { padding: 3rem 1.5rem; }
 .about p { color: var(--onyx); font-size: 1.05rem; margin-bottom: 1.3rem; opacity: 0.75; line-height: 1.65; }
 
 /* ===== SCHEDULE ===== */
-.schedule { background: var(--cream-dark); }
+.schedule {
+  background: var(--onyx);
+  position: relative;
+  overflow: hidden;
+}
+.schedule::before {
+  content: '';
+  position: absolute;
+  top: -20%; left: -10%;
+  width: 50%; height: 70%;
+  background: radial-gradient(ellipse, rgba(242,98,35,0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.schedule::after {
+  content: '';
+  position: absolute;
+  bottom: -10%; right: -5%;
+  width: 45%; height: 60%;
+  background: radial-gradient(ellipse, rgba(196,162,101,0.12) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+.schedule .container { position: relative; z-index: 1; }
+.schedule .section-label { color: var(--gold); }
+.schedule .section-heading { color: var(--cream); }
+.schedule .section-heading .script-accent { color: var(--terracotta); }
+.schedule .schedule-intro { color: var(--cream); opacity: 0.5; }
+.schedule .schedule-note { color: var(--cream); }
+
+.schedule-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.schedule-particles span {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-up 6s infinite;
+}
+.schedule-particles span:nth-child(1) { left: 15%; animation-delay: 0s; animation-duration: 7s; }
+.schedule-particles span:nth-child(2) { left: 30%; animation-delay: 1.2s; animation-duration: 5s; }
+.schedule-particles span:nth-child(3) { left: 50%; animation-delay: 2.5s; animation-duration: 8s; width: 2px; height: 2px; }
+.schedule-particles span:nth-child(4) { left: 70%; animation-delay: 0.8s; animation-duration: 6s; }
+.schedule-particles span:nth-child(5) { left: 85%; animation-delay: 3s; animation-duration: 7s; width: 4px; height: 4px; background: var(--terracotta); }
+.schedule-particles span:nth-child(6) { left: 40%; animation-delay: 4s; animation-duration: 9s; width: 2px; height: 2px; }
+.schedule-particles span:nth-child(7) { left: 60%; animation-delay: 1.5s; animation-duration: 6s; }
+.schedule-particles span:nth-child(8) { left: 25%; animation-delay: 3.5s; animation-duration: 8s; background: var(--terracotta); width: 2px; height: 2px; }
+@keyframes float-up {
+  0% { bottom: -5%; opacity: 0; transform: translateX(0); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { bottom: 105%; opacity: 0; transform: translateX(20px); }
+}
+
 
 .schedule-intro {
   color: var(--onyx);
@@ -400,7 +460,10 @@ section { padding: 3rem 1.5rem; }
 }
 
 .day-group {
-  background: var(--cream);
+  background: rgba(253,245,239,0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(253,245,239,0.08);
   border-radius: 10px;
   padding: 1rem;
   border: 1px solid rgba(103,6,38,0.06);
@@ -469,7 +532,7 @@ section { padding: 3rem 1.5rem; }
   font-family: var(--body);
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--claret);
+  color: var(--cream);
   background: transparent;
   border: none;
   border-radius: 8px;
@@ -485,8 +548,8 @@ section { padding: 3rem 1.5rem; }
 }
 
 .slot.selected {
-  background: rgba(242,98,35,0.07);
-  box-shadow: 0 4px 18px rgba(242,98,35,0.35), 0 2px 8px rgba(242,98,35,0.2);
+  background: rgba(242,98,35,0.12);
+  box-shadow: 0 4px 24px rgba(242,98,35,0.4), 0 0 40px rgba(242,98,35,0.15);
 }
 
 .slot.taken {
@@ -521,6 +584,10 @@ section { padding: 3rem 1.5rem; }
 }
 
 .slot.selected svg.crayon-circle ellipse {
+  opacity: 0.75;
+  stroke-dashoffset: 0;
+}
+.slot.selected.just-selected svg.crayon-circle ellipse {
   opacity: 1;
   animation: draw-crayon 0.6s ease-out forwards;
 }
@@ -573,6 +640,7 @@ section { padding: 3rem 1.5rem; }
 }
 
 .schedule-cta { text-align: center; margin-top: 2rem; }
+.schedule-cta .btn { background: var(--terracotta); color: var(--cream); }
 
 /* ===== JOURNEY ===== */
 .journey { background: var(--cream); }
@@ -808,7 +876,8 @@ footer {
   html { scroll-behavior: auto; }
   .scroll-hint span { animation: none; opacity: 0.4; }
   .btn { transition: none; }
-  .slot.selected svg.crayon-circle ellipse { animation: none; stroke-dashoffset: 0; opacity: 0.75; }
+  .slot.selected svg.crayon-circle ellipse { stroke-dashoffset: 0; opacity: 0.75; }
+  .slot.selected.just-selected svg.crayon-circle ellipse { animation: draw-crayon 0.6s ease-out forwards; }
 }
 
 /* ===== HERO VIDEO ===== */
@@ -1186,6 +1255,7 @@ const SCHEDULE = [
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMVS8QtwPCQqXOXdwfx4wkvM7-2qEIB9RLfEOIbdewqwwcEF9r1uGlmgTIYC_RYpxBMA/exec';
 
 let selectedSlots = []; // array of { date, time, label }
+let lastToggled = null;
 let takenSlots = [];
 
 function isSelected(date, time) {
@@ -1196,8 +1266,10 @@ function toggleSlot(date, time, label) {
   const idx = selectedSlots.findIndex(s => s.date === date && s.time === time);
   if (idx >= 0) {
     selectedSlots.splice(idx, 1);
+    lastToggled = null;
   } else {
     selectedSlots.push({ date, time, label });
+    lastToggled = { date, time };
   }
   renderSlots();
   updateSummary();
@@ -1232,6 +1304,10 @@ function renderSlots() {
 
       const slot = document.createElement('div');
       slot.className = 'slot' + (isTaken ? ' taken' : '') + (sel ? ' selected' : '');
+      if (sel && lastToggled && lastToggled.date === day.date && lastToggled.time === time) {
+        slot.classList.add('just-selected');
+        setTimeout(() => slot.classList.remove('just-selected'), 700);
+      }
       slot.innerHTML = time + `<svg class="crayon-circle" viewBox="0 0 100 42"><ellipse cx="50" cy="21" rx="48" ry="19" transform="rotate(-${1 + Math.random()*3} 50 21)"/></svg>`;
 
       if (!isTaken) {
@@ -1327,7 +1403,7 @@ document.getElementById('confirmBtn').addEventListener('click', async () => {
       <div id="contactForm" style="max-width:400px;margin:0 auto;">
         <p style="font-family:var(--display);font-weight:600;font-size:0.95rem;color:var(--claret);margin-bottom:0.5rem;text-align:center;">Оставь контакт — я напишу для подтверждения</p>
         <input id="contactName" type="text" placeholder="Имя" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.5rem;background:var(--cream);outline:none;">
-        <input id="contactTg" type="text" placeholder="Telegram или телефон" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.8rem;background:var(--cream);outline:none;">
+        <input id="contactTg" type="text" placeholder="@username или 89229634715" style="width:100%;padding:0.7rem 1rem;border:1px solid rgba(103,6,38,0.1);border-radius:8px;font-family:var(--body);font-size:0.88rem;margin-bottom:0.8rem;background:var(--cream);outline:none;">
         <button class="btn" id="confirmBtn2" style="width:100%;">Отправить</button>
       </div>`;
     document.getElementById('contactName').focus();
@@ -1403,8 +1479,12 @@ async function loadScheduleFromSheets() {
             const m = t.match(/(\d{1,2}):(\d{2}):\d{2}/);
             return m ? m[1].padStart(2,'0') + ':' + m[2] : t;
           }
-          // "12:00:00" → "12:00"
-          if (typeof t === 'string') return t.replace(/:\d{2}$/, '').trim();
+          // "12:00:00" → "12:00", but keep "12:00" as is
+          if (typeof t === 'string') {
+            const parts = t.trim().split(':');
+            if (parts.length >= 2) return parts[0].padStart(2,'0') + ':' + parts[1];
+            return t.trim();
+          }
           return String(t);
         }).filter(t => t && !t.includes('GMT') && !t.includes('1899'));
         SCHEDULE.push({ date: dateStr, label: label, times: cleanTimes });
