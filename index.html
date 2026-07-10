@@ -267,7 +267,7 @@ body::after {
 .hero h1 .hero-subtitle {
   display: block;
   font-weight: 500;
-  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -823,9 +823,79 @@ section { padding: 3rem 1.5rem; }
 .card-wide .special-price { color: var(--gold); font-size: 1.8rem; }
 .card-wide .special-price-note { color: rgba(253,245,239,0.4); opacity: 1; }
 
+.special-btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  font-family: var(--body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cream);
+  background: var(--terracotta);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.special-btn:hover { background: #d9551a; transform: translateY(-1px); }
+.card-wide .special-btn {
+  background: var(--gold);
+  color: var(--claret);
+}
+.card-wide .special-btn:hover { background: #b3923a; }
+
 @media (max-width: 540px) {
   .specials-grid { grid-template-columns: 1fr; }
   .special-card.card-wide { grid-template-columns: 1fr; }
+}
+
+/* ===== FAQ ===== */
+.faq { background: var(--cream); }
+.faq-list { max-width: 680px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid rgba(61,5,24,0.08);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--claret);
+  text-align: left;
+  line-height: 1.4;
+  gap: 1rem;
+}
+.faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--terracotta);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-question::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+.faq-answer p {
+  padding-bottom: 1.2rem;
+  font-size: 0.88rem;
+  color: var(--onyx);
+  opacity: 0.7;
+  line-height: 1.6;
 }
 
 /* ===== DETAILS ===== */
@@ -1203,7 +1273,7 @@ footer {
 
     <div class="slots-grid" id="slotsGrid"></div>
 
-    <p class="schedule-note">Серые слоты уже заняты.</p>
+    <p class="schedule-note">Серые слоты уже заняты. Наличие зала подтверждаю в личных сообщениях после записи.</p>
     <div id="selectedSummary" class="selected-summary" style="display:none"></div>
     <div class="schedule-cta">
       <button class="btn" id="confirmBtn" disabled>Выбери слоты</button>
@@ -1276,6 +1346,7 @@ footer {
         <p class="special-desc">Занятие вдвоём — веселее вместе, а цена делится пополам.</p>
         <p class="special-price">3 200 ₽/час</p>
         <p class="special-price-note">+ аренда зала · на двоих</p>
+        <a href="https://t.me/evavasilyyevna?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20%D1%81%20%D0%BF%D0%BE%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9" target="_blank" class="special-btn">Написать в Telegram</a>
       </div>
 
       <div class="special-card">
@@ -1284,6 +1355,7 @@ footer {
         <p class="special-desc">Девичник, день рождения, корпоратив — танцевальный мастер-класс для вашей компании. До 10 человек. Больше — обсудим индивидуальные условия в ЛС.</p>
         <p class="special-price">8 000 ₽/час</p>
         <p class="special-price-note">до 10 человек + аренда зала</p>
+        <a href="https://t.me/evavasilyyevna?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8" target="_blank" class="special-btn">Написать в Telegram</a>
       </div>
 
       <div class="special-card card-wide">
@@ -1291,11 +1363,64 @@ footer {
           <div class="special-emoji">🎁</div>
           <p class="special-title">Подарочный сертификат</p>
           <p class="special-desc">Подари часы танцев — от 2 часов.</p>
+          <a href="https://t.me/evavasilyyevna?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D1%81%D1%82%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82" target="_blank" class="special-btn">Подарить</a>
         </div>
         <div style="text-align:right;">
           <p class="special-price">от 5 400 ₽</p>
           <p class="special-price-note">от 2 часов · с арендой зала</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#C4A265"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#C4A265"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#C4A265"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#C4A265"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#F26223"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#F26223"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#F26223"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#F26223"/></svg>
+      Вопросы
+    </p>
+    <h2 class="section-heading">Вопрос — <span class="script-accent">ответ</span></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Я никогда не танцевала — у меня получится?</button>
+        <div class="faq-answer"><p>Абсолютно! Большинство моих учениц приходят с нуля. Индивидуальный формат как раз для этого — мы идём в вашем темпе, без спешки и сравнений с группой.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Сколько занятий нужно, чтобы увидеть результат?</button>
+        <div class="faq-answer"><p>Уже после 2-3 занятий вы почувствуете разницу в теле и уверенность в движениях. За 8 занятий можно освоить базу и начать импровизировать.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Можно ли перенести или отменить занятие?</button>
+        <div class="faq-answer"><p>Да, перенос возможен не менее чем за 3 суток до занятия. Просто напишите мне в Telegram — договоримся о новом времени.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Что входит в стоимость?</button>
+        <div class="faq-answer"><p>В стоимость входит работа преподавателя. Аренда зала оплачивается отдельно — около 700 ₽/час. Залы удобно расположены у м. Павелецкая.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Какие танцы мы будем изучать?</button>
+        <div class="faq-answer"><p>Основа — латина: румба, самба, ча-ча-ча, а также микс с high heels, хип-хопом, jazz funk. Программу подстраиваю под ваши пожелания — можем сфокусироваться только на латине или больше работать в партере.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Нужен ли партнёр для занятий?</button>
+        <div class="faq-answer"><p>Нет! На индивидуальных занятиях мы работаем над вашей техникой, пластикой и музыкальностью. Партнёр не нужен — я показываю всё сама.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Как происходит оплата?</button>
+        <div class="faq-answer"><p>Переводом после подтверждения записи. Можно оплатить одно занятие или сразу пакет — чем больше часов, тем выгоднее цена за час.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">А если на выбранное время не будет зала?</button>
+        <div class="faq-answer"><p>Я проверяю наличие зала после вашей записи и пишу в Telegram для подтверждения. Если зал занят — предложу ближайшее свободное время.</p></div>
       </div>
     </div>
   </div>
@@ -1368,13 +1493,22 @@ footer {
 
 <script>
 const SCHEDULE = [
-  { date: '2025-07-08', label: 'Вт, 8 июля',   times: ['15:00','16:00','17:00','18:00'] },
-  { date: '2025-07-09', label: 'Ср, 9 июля',    times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
-  { date: '2025-07-10', label: 'Чт, 10 июля',   times: ['12:00','13:00','14:00','15:00','16:00'] },
-  { date: '2025-07-11', label: 'Пт, 11 июля',   times: ['12:00','13:00','17:00'] },
-  { date: '2025-07-13', label: 'Вс, 13 июля',   times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
-  { date: '2025-07-14', label: 'Пн, 14 июля',   times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
-  { date: '2025-07-15', label: 'Вт, 15 июля',   times: ['12:00','13:00','14:00','15:00','16:00','17:00','18:00'] },
+  { date: '2026-07-13', label: 'Пн, 13 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-14', label: 'Вт, 14 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-15', label: 'Ср, 15 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-16', label: 'Чт, 16 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-17', label: 'Пт, 17 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-20', label: 'Пн, 20 июля',   times: ['19:00'] },
+  { date: '2026-07-21', label: 'Вт, 21 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00'] },
+  { date: '2026-07-22', label: 'Ср, 22 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-23', label: 'Чт, 23 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-24', label: 'Пт, 24 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-25', label: 'Сб, 25 июля',   times: ['11:00','12:00','13:00','14:00','15:00'] },
+  { date: '2026-07-27', label: 'Пн, 27 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-28', label: 'Вт, 28 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-29', label: 'Ср, 29 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-30', label: 'Чт, 30 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
+  { date: '2026-07-31', label: 'Пт, 31 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
 ];
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMVS8QtwPCQqXOXdwfx4wkvM7-2qEIB9RLfEOIbdewqwwcEF9r1uGlmgTIYC_RYpxBMA/exec';
@@ -1591,17 +1725,27 @@ if (window.location.search.includes('reset')) {
 }
 try { const s = localStorage.getItem('dance_taken'); if (s) takenSlots = JSON.parse(s); } catch(e) {}
 
-// Load schedule from Google Sheets if URL is set
+// Load schedule AND booked slots from Google Sheets
 async function loadScheduleFromSheets() {
   if (!GOOGLE_SCRIPT_URL) { renderSlots(); return; }
   try {
     const resp = await fetch(GOOGLE_SCRIPT_URL);
     const data = await resp.json();
-    if (Array.isArray(data) && data.length > 0) {
+    // Load booked slots from Sheets (if script returns them)
+    if (data && data.booked && Array.isArray(data.booked)) {
+      data.booked.forEach(b => {
+        if (!takenSlots.some(t => t.date === b.date && t.time === b.time)) {
+          takenSlots.push({ date: b.date, time: b.time });
+        }
+      });
+      localStorage.setItem('dance_taken', JSON.stringify(takenSlots));
+    }
+    const scheduleData = data && data.schedule ? data.schedule : (Array.isArray(data) ? data : null);
+    if (Array.isArray(scheduleData) && scheduleData.length > 0) {
       SCHEDULE.length = 0;
       const dayNames = ['вс','пн','вт','ср','чт','пт','сб'];
       const monthNames = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-      data.forEach(d => {
+      scheduleData.forEach(d => {
         const dateStr = typeof d.date === 'string' ? d.date : new Date(d.date).toISOString().split('T')[0];
         // Fix label if it's a raw Date string from Sheets
         let label = d.label;
@@ -1775,6 +1919,18 @@ updateConfirmBtn();
 
   draw();
 })();
+</script>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
 </script>
 
 </body>
