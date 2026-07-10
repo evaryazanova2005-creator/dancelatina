@@ -6,7 +6,7 @@
 <title>Индивидуальные занятия латиной — Ева</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Allura&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,7 +19,7 @@
   --cream-dark: #F3E8DA;
   --claret-light: #670626;
   --display: 'Playfair Display', Georgia, serif;
-  --script: 'Great Vibes', cursive;
+  --script: 'Allura', cursive;
   --body: 'DM Sans', system-ui, sans-serif;
 }
 
@@ -253,8 +253,8 @@ body::after {
   display: block;
   font-family: var(--script);
   font-weight: 400;
-  font-size: clamp(3.2rem, 9vw, 6.5rem);
-  line-height: 1.55;
+  font-size: clamp(3.6rem, 10vw, 7rem);
+  line-height: 1.4;
   letter-spacing: 0.01em;
   color: var(--terracotta);
 }
@@ -816,7 +816,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 65%;
   opacity: 0.4;
   z-index: 0;
   pointer-events: none;
@@ -918,7 +918,6 @@ footer {
     <span class="script-line">латинатерапия</span>
     индивидуальные занятия
   </h1>
-  <p class="hero-sub">Румба, самба, ча-ча-ча — и всё, что между ними.</p>
   <a href="#schedule" class="btn btn-hero">Записаться</a>
   <div class="scroll-hint"><span></span></div>
 </section>
@@ -1368,7 +1367,24 @@ document.getElementById('confirmBtn').addEventListener('click', async () => {
 });
 
 try { const s = localStorage.getItem('dance_taken'); if (s) takenSlots = JSON.parse(s); } catch(e) {}
-renderSlots();
+
+// Load schedule from Google Sheets if URL is set
+async function loadScheduleFromSheets() {
+  if (!GOOGLE_SCRIPT_URL) { renderSlots(); return; }
+  try {
+    const resp = await fetch(GOOGLE_SCRIPT_URL);
+    const data = await resp.json();
+    if (Array.isArray(data) && data.length > 0) {
+      SCHEDULE.length = 0;
+      data.forEach(d => {
+        const dateStr = typeof d.date === 'string' ? d.date : new Date(d.date).toISOString().split('T')[0];
+        SCHEDULE.push({ date: dateStr, label: d.label, times: d.times });
+      });
+    }
+  } catch(e) { console.warn('Sheets load failed, using local schedule:', e); }
+  renderSlots();
+}
+loadScheduleFromSheets();
 updateSummary();
 updateConfirmBtn();
 </script>
