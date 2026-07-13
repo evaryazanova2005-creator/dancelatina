@@ -18,11 +18,11 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(61,5,24,0.85);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.3s;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  transition: background 0.3s, backdrop-filter 0.3s;
 }
 .navbar-inner {
   max-width: 1100px;
@@ -54,6 +54,12 @@
   letter-spacing: 0.02em;
 }
 .navbar-links a:hover { color: var(--terracotta); }
+.navbar.scrolled {
+  background: rgba(61,5,24,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
 
 .burger {
   display: none;
@@ -360,7 +366,7 @@ body::after {
   line-height: 1.1;
   letter-spacing: -0.04em;
   color: var(--cream);
-  text-align: center;
+  text-align: left;
   text-wrap: balance;
   margin-bottom: 2.5rem;
 }
@@ -371,6 +377,7 @@ body::after {
   font-size: clamp(1.2rem, 3vw, 2rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: left;
 }
 
 .hero h1 .script-line {
@@ -1636,7 +1643,7 @@ const SCHEDULE = [
   { date: '2026-07-31', label: 'Пт, 31 июля',   times: ['11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'] },
 ];
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby7rftcD24apqUwvhAP_IYjzJ2wXGHPMgnktJ52wh_oifFl8ckYMvRVR9R7AiX2dt5D7Q/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw8C7loWUOAnk3ORkPbD14R-qiJx7hhBpT2OsKCn9yMXLHaFbr-quDeGDS1CiCxR82y1w/exec';
 
 let selectedSlots = []; // array of { date, time, label }
 let lastToggled = null;
@@ -1817,7 +1824,7 @@ document.getElementById('confirmBtn').addEventListener('click', async () => {
           await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST', mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ slots: selectedSlots, name, contact: tg, timestamp: new Date().toISOString() })
+            body: JSON.stringify({ slots: selectedSlots.map(s => ({ date: String(s.date).slice(0,10), time: s.time, label: s.label })), name, contact: tg, timestamp: new Date().toISOString() })
           });
         } catch (e) { console.error(e); }
       }
@@ -2069,6 +2076,12 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     document.body.style.overflow = '';
   });
 });
+
+// Navbar: transparent on hero, solid on scroll
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
 </script>
 
 </body>
