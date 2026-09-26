@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3CradialGradient id=%27g%27 cx=%2740%25%27 cy=%2735%25%27%3E%3Cstop offset=%270%25%27 stop-color=%27%23FFB347%27/%3E%3Cstop offset=%27100%25%27 stop-color=%27%23F26223%27/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M18 12 Q32 8 46 12 M14 22 Q32 18 50 22 M12 32 Q32 28 52 32 M14 42 Q32 38 50 42 M18 52 Q32 48 46 52%27 stroke=%27%23fff%27 stroke-width=%271.2%27 fill=%27none%27 opacity=%270.4%27/%3E%3Cpath d=%27M22 6 Q24 32 22 58 M32 4 Q34 32 32 60 M42 6 Q40 32 42 58%27 stroke=%27%23fff%27 stroke-width=%271.2%27 fill=%27none%27 opacity=%270.35%27/%3E%3Ccircle cx=%2724%27 cy=%2720%27 r=%272.5%27 fill=%27%23fff%27 opacity=%270.7%27/%3E%3Ccircle cx=%2740%27 cy=%2728%27 r=%272%27 fill=%27%23fff%27 opacity=%270.5%27/%3E%3Ccircle cx=%2728%27 cy=%2740%27 r=%271.8%27 fill=%27%23fff%27 opacity=%270.5%27/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latina choreo — занятия с Евой · Форматы и стоимость</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style id="site-styles">
+@font-face { font-family: Annabelle; src: url('Annabelle.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+:root { --ink: #fff0e9; --muted: #d8b4af; --rose: #ffc2b7; --line: #a55054; --display: 'Playfair Display', Georgia, serif; --body: 'DM Sans', system-ui, sans-serif; --script: Annabelle, cursive; }
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; color-scheme: dark; scroll-padding-top: 85px; }
+body { color: var(--ink); background: radial-gradient(ellipse at 100% 12%, #6c091d55, transparent 35%), radial-gradient(ellipse at 0 70%, #90091944, transparent 30%), #090203; font: 16px/1.65 var(--body); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 5px; }
+section { padding: 64px 24px; }
+.container, .formats-wrap { max-width: 1080px; margin: auto; }
+[id] { scroll-margin-top: 85px; }
+/* The same thin luminous frame is used throughout the page. */
+.glow-card, .booking {
+ position: relative; border: 1px solid #ff9c95; border-radius: 24px;
+ background: linear-gradient(130deg, transparent 25%, #cf0d151c 40%, transparent 55%), radial-gradient(ellipse at 100% 0, #a5081570, transparent 50%), radial-gradient(ellipse at 0 100%, #8f071c50, transparent 55%), #0d0203;
+ box-shadow: 0 0 3px #ff9c9560, 0 0 22px #ec132524, inset 0 0 24px #b7192517;
+}
+.glow-card::before {
+ content: ''; position: absolute; height: 1px; top: -1px; left: 20%; right: 20%; background: linear-gradient(90deg, transparent, #fff3e9, transparent); box-shadow: 0 0 12px #ff3939;
+}
+/* Four-point stars echo the price references. */
+.glow-card::after {
+ content: '✦'; position: absolute; top: -10px; right: 26px; font: 18px/1 Georgia, serif; color: #ffe7dc; text-shadow: 0 0 8px #ff958b, 0 0 22px #fe2134; pointer-events: none;
+}
+.section-label, .booking-eyebrow, .formats-heading > p { color: var(--rose); font-size: 11px; letter-spacing: .28em; text-transform: uppercase; margin-bottom: 18px; }
+.section-label { display: flex; align-items: center; gap: 10px; }
+.section-label svg, .section-divider svg, .footer-divider svg { filter: drop-shadow(0 0 6px #ff7777); flex-shrink: 0; }
+.section-heading { font: 400 clamp(32px, 4.5vw, 54px)/1.12 var(--display); letter-spacing: -.04em; margin-bottom: 28px; text-wrap: balance; }
+.section-heading .script-accent { color: var(--rose); font: inherit; }
+.section-divider, .footer-divider { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 8px 0; }
+.section-divider .line, .footer-divider .line { width: 100px; max-width: 20vw; height: 1px; background: linear-gradient(90deg, transparent, #b86664, transparent); }
+/* Navigation */
+.navbar { position: fixed; inset: 0 0 auto; z-index: 20; background: linear-gradient(#090203dd, transparent); transition: background .2s; }
+.navbar.scrolled { background: #120306ed; backdrop-filter: blur(16px); border-bottom: 1px solid #a5505455; }
+.navbar-inner { max-width: 1200px; margin: auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.navbar-logo { font: 28px/1 var(--display); text-decoration: none; color: var(--rose); }
+.navbar-logo span { font: 21px/1 var(--script); margin-left: 10px; }
+.navbar-links { display: flex; list-style: none; gap: 25px; }
+.navbar-links a { font-size: 13px; text-decoration: none; color: var(--muted); }
+.navbar-links a:hover { color: var(--ink); }
+.burger { display: none; width: 34px; height: 34px; border: 0; background: transparent; cursor: pointer; position: relative; z-index: 22; }
+.burger span { position: absolute; left: 4px; width: 26px; height: 1px; background: var(--rose); transition: transform .2s, opacity .2s; }
+.burger span:nth-child(1) { top: 9px; }.burger span:nth-child(2) { top: 17px; }.burger span:nth-child(3) { top: 25px; }
+.burger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }.burger.open span:nth-child(2) { opacity: 0; }.burger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; inset: 0; background: #140306f7; z-index: 19; list-style: none; align-items: center; justify-content: center; flex-direction: column; gap: 25px; }
+.mobile-menu a { text-decoration: none; font: 30px/1.3 var(--display); }
+/* Hero */
+.hero { min-height: 720px; min-height: 92svh; position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 24px 85px; text-align: center; background: #100204; }
+.hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #10020433, #3c000459 50%, #090203), radial-gradient(ellipse at 80% 35%, #cc07134d, transparent 65%); }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; opacity: .35; filter: grayscale(1) contrast(1.2); z-index: -2; }
+.hero-eyebrow { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; }
+.hero h1 { font-weight: 400; max-width: 100%; }
+.hero-name { display: block; font: 400 clamp(110px, 21vw, 250px)/.9 var(--display); letter-spacing: -.06em; color: #ffe1d7; text-shadow: 0 0 35px #ff253466; }
+.hero .script-line { display: block; font: 400 clamp(35px, 6vw, 70px)/1.4 var(--script); color: var(--rose); }
+.hero-subtitle { display: block; font: 400 clamp(20px, 3vw, 30px)/1.4 var(--display); margin: 24px 0 32px; }
+.hero-sparkle-tl, .hero-sparkle-br { position: absolute; filter: drop-shadow(0 0 10px #ff8686); pointer-events: none; }
+.hero-sparkle-tl { top: 24%; left: 12%; }.hero-sparkle-br { bottom: 24%; right: 12%; }
+.hero-sparkle-tl svg, .hero-sparkle-br svg { width: 20px; height: 20px; }
+.scroll-hint { position: absolute; bottom: 26px; }.scroll-hint span { display: block; width: 1px; height: 28px; background: linear-gradient(var(--rose), transparent); }
+.btn, .format-button { display: inline-flex; justify-content: center; align-items: center; width: fit-content; max-width: 100%; min-height: 46px; padding: 12px 25px; border: 1px solid #ffaaa1; border-radius: 999px; background: #230507; color: var(--ink); font: 400 14px/1.5 var(--body); letter-spacing: .06em; text-align: center; text-decoration: none; cursor: pointer; transition: background .2s, box-shadow .2s; }
+.btn:hover, .format-button:hover { background: #660b15; box-shadow: 0 0 18px #ec132538; }
+/* Editorial content */
+.about > .container, .journey > .container, .faq > .container { padding: clamp(24px, 4vw, 48px); }
+.about p:not(.section-label) { color: var(--muted); margin-bottom: 18px; font-size: 16px; line-height: 1.8; }
+.about p:last-child { margin-bottom: 0; }
+.about-me-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 36px; align-items: start; }
+.about-me-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 16px; border: 1px solid #ca7b75; }
+.about video { border: 1px solid #b76d66; box-shadow: 0 0 18px #ed152425; }
+/* Five complete cards; there is no duplicate series of large screens. */
+.formats { background: radial-gradient(ellipse at 100% 12%, #8b080a40, transparent 45%); }
+.formats-heading { text-align: center; margin-bottom: 28px; }
+.formats-heading h2 { font: 400 clamp(72px, 12vw, 112px)/1 var(--display); letter-spacing: -.06em; color: #ffd4c9; text-shadow: 0 0 24px #f1192966; }
+.formats-heading > span { font: 32px/1.4 var(--script); color: var(--rose); }
+.format-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 38px; }
+.format-nav a { padding: 9px 13px; min-height: 40px; border: 1px solid #a95151; border-radius: 30px; color: var(--muted); text-decoration: none; font-size: 12px; }
+.format-nav a:hover { background: #7d0c15; }
+.format-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px 18px; align-items: stretch; }
+.format-card { grid-column: span 2; padding: 26px 22px 22px; min-width: 0; display: flex; flex-direction: column; }
+.format-card:nth-child(-n+2) { grid-column: span 3; }
+.format-number { color: var(--muted); font-size: 10px; letter-spacing: .14em; margin-bottom: 14px; }
+.format-card h3 { font: 400 clamp(28px, 3vw, 37px)/1.08 var(--display); letter-spacing: -.035em; overflow-wrap: anywhere; }
+.format-subtitle { font: 400 18px/1.35 var(--display); color: var(--muted); margin-top: 7px; }
+.format-rule { height: 1px; flex-shrink: 0; background: linear-gradient(90deg, #d6978e, #e66369, #ffe3d4); margin: 18px 0; box-shadow: 0 0 8px #ee273e55; }
+.format-price { font: 400 clamp(32px, 3.5vw, 43px)/1.2 var(--display); color: #ffd1c8; letter-spacing: -.03em; }
+.format-price small { font-size: 16px; color: var(--ink); letter-spacing: 0; white-space: nowrap; }
+.hall-note { margin: 10px 0 12px; font-size: 13px; color: var(--muted); line-height: 1.65; }
+.format-card h4 { margin: 15px 0 8px; color: var(--rose); font: 400 10px/1.6 var(--body); letter-spacing: .2em; text-transform: uppercase; }
+.packages > div { display: flex; justify-content: space-between; gap: 8px; padding: 9px 12px; border: 1px solid #a15b57; border-radius: 9px; margin: 6px 0; font: 400 18px/1.4 var(--display); }
+.packages dd { color: var(--rose); white-space: nowrap; }.packages small { font-size: 12px; color: var(--ink); }
+.packages:not(.friends-prices) > div:last-child { border-color: #ffb1a2; box-shadow: 0 0 9px #fe1e3166; }
+.format-list { list-style: none; margin: 8px 0 14px; }
+.format-list li { position: relative; padding-left: 19px; margin: 8px 0; font-size: 13px; line-height: 1.6; }
+.format-list li::before { content: '✧'; position: absolute; left: 0; color: var(--rose); }
+.format-meta { border-top: 1px solid #a35b5566; padding: 12px 0; font-size: 13px; color: var(--muted); }
+.format-card > .format-button { margin-top: auto; width: 100%; }
+/* A single booking window, opened with the selected format. */
+.booking { position: fixed; inset: 0; color: var(--ink); padding: 0; margin: auto; width: min(540px, calc(100% - 32px)); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
+.booking::backdrop { background: #080103cc; backdrop-filter: blur(8px); }
+.booking-card { padding: 30px; }
+.booking-close { position: absolute; right: 12px; top: 10px; width: 44px; height: 44px; color: var(--rose); border: 0; border-radius: 50%; background: #180307; cursor: pointer; font-size: 30px; line-height: 1; }
+.booking-eyebrow { padding-right: 36px; }
+.booking h2 { font: 400 44px/1.2 var(--display); margin: 12px 0; letter-spacing: -.03em; }
+.booking-card > p:not(.booking-eyebrow) { color: var(--muted); font-size: 14px; }
+.booking label { display: block; font-size: 13px; margin: 15px 0 6px; }.booking label span { color: var(--muted); }
+.booking input, .booking select, .booking textarea { display: block; width: 100%; min-width: 0; padding: 11px 12px; color: var(--ink); background: #17090b; border: 1px solid #9d6660; border-radius: 9px; font: 16px/1.5 var(--body); }
+.booking textarea { resize: vertical; }.booking .format-button { margin-top: 18px; width: 100%; }
+.booking .booking-note { font-size: 11px; color: var(--muted); margin-top: 12px; }
+.message-preview { margin-top: 15px; font-size: 13px; }.message-preview summary { cursor: pointer; padding: 5px 0; }
+#bookingPreview { white-space: pre-wrap; overflow-wrap: anywhere; padding: 10px 0; color: var(--muted); }
+/* Steps, FAQ, practical details and footer share the red-black palette. */
+.steps { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.step { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 14px; padding-top: 18px; border-top: 1px solid #a35b5577; }
+.step-num { color: var(--rose); font: 28px/1.2 var(--display); }.step-title { font: 23px/1.2 var(--display); margin-bottom: 8px; }.step-desc { font-size: 14px; color: var(--muted); }
+.faq-item { border-bottom: 1px solid #a35b5577; }.faq-item:last-child { border: 0; }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 0; background: none; border: 0; color: var(--ink); cursor: pointer; font: 400 22px/1.4 var(--display); text-align: left; }
+.faq-question::after { content: '+'; color: var(--rose); font: 28px/1 var(--display); flex-shrink: 0; }.faq-item.open .faq-question::after { content: '−'; }
+.faq-answer { display: none; }.faq-item.open .faq-answer { display: block; }.faq-answer p { padding: 0 0 20px; font-size: 14px; color: var(--muted); }
+.detail-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }.detail-item { padding: 24px; }.detail-icon { color: var(--rose); font-size: 18px; text-shadow: 0 0 8px #ff5252; }.detail-title { font: 25px/1.3 var(--display); margin: 5px 0 10px; }.detail-text { color: var(--muted); font-size: 13px; }
+footer { text-align: center; padding: 32px 24px 40px; color: var(--muted); font-size: 12px; } .footer-divider { margin-bottom: 20px; } .no-script-booking { text-align: center; padding: 20px; }
+@media (max-width: 850px) {
+ .format-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .format-card, .format-card:nth-child(-n+2) { grid-column: auto; }
+ .format-card:last-child { grid-column: 1 / -1; }
+ .about-me-layout { gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+ .detail-grid { grid-template-columns: 1fr 1fr; }
+ .navbar-links { display: none; }.burger { display: block; }.mobile-menu.open { display: flex; }
+}
+@media (max-width: 600px) {
+ section { padding: 36px 18px; }
+ .navbar-inner { padding: 10px 18px; }.navbar-logo { font-size: 24px; }.navbar-logo span { font-size: 19px; }
+ .hero { min-height: 82svh; padding: 100px 18px 70px; }
+ .hero-sparkle-tl { top: 22%; left: 7%; }.hero-sparkle-br { right: 7%; bottom: 20%; }
+ .hero-sparkle-tl svg, .hero-sparkle-br svg { width: 16px; height: 16px; }
+ .section-heading { font-size: 34px; }.about > .container, .journey > .container, .faq > .container { padding: 26px 22px; }
+ .about p:not(.section-label) { font-size: 14px; }.about-me-layout { grid-template-columns: 1fr; }
+ .about-me-photo { max-height: 400px; object-position: center; }
+ .format-grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+ .format-card, .format-card:nth-child(-n+2), .format-card:last-child { grid-column: auto; }
+ .format-card { padding: 25px 22px 22px; }.format-card h3 { font-size: 32px; }.format-price { font-size: 38px; }
+ .format-nav { gap: 6px; }.format-nav a { font-size: 11px; padding: 9px 10px; }
+ .format-list li { margin: 6px 0; }.steps { grid-template-columns: 1fr; gap: 18px; }.step-title { font-size: 22px; }
+ .faq-question { font-size: 20px; }.detail-grid { gap: 14px; }.detail-item { padding: 18px; }.detail-title { font-size: 22px; }
+ .booking-card { padding: 26px 22px; }.booking h2 { font-size: 38px; }
+}
+@media (max-width: 360px) {
+ .format-card h3 { font-size: 28px; }.format-price { font-size: 34px; }.packages > div { font-size: 16px; padding: 8px; }
+ .detail-grid { grid-template-columns: 1fr; }.section-heading { font-size: 29px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+
+body:has(dialog[open]) { overflow: hidden; }
+
+/* The gallery continues the site's visual language and scales to more clips. */
+.gallery-heading { max-width: 720px; margin-bottom: 32px; }
+.gallery-intro { color: var(--muted); font-size: 16px; line-height: 1.8; }
+.dance-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+.dance-video-card { min-width: 0; padding: 12px; }
+.dance-video-card video { display: block; width: 100%; aspect-ratio: 4/5; object-fit: contain; background: #090203; border-radius: 15px; }
+.dance-video-card figcaption { padding: 20px 12px 14px; }
+.dance-video-card figcaption span { color: var(--rose); font-size: 10px; letter-spacing: .18em; }
+.dance-video-card h3 { font: 400 27px/1.2 var(--display); margin: 10px 0; }
+.dance-video-card figcaption p, .gallery-invitation p { color: var(--muted); font-size: 14px; }
+.gallery-invitation { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 28px; }
+.gallery-invitation .format-button { flex-shrink: 0; }
+@media (max-width: 600px) {
+ .dance-video-grid { gap: 24px; }
+ .dance-video-card video { aspect-ratio: 9/12; }
+ .gallery-intro { font-size: 14px; }
+ .gallery-invitation { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+/* Amounts are single unbroken tokens, including the currency sign. */
+.money { white-space: nowrap; display: inline-block; overflow-wrap: normal; word-break: normal; }
+@media (min-width: 601px) { .dance-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Full-height illustrated covers, without captions below the clips. */
+.dance-video-card { padding: 0; overflow: hidden; }
+.dance-video-card video { aspect-ratio: 3 / 4; border-radius: 23px; }
+.dance-video-card::after { display: none; }
+
+/* Clear cover controls, with no sound controls. */
+.video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 76px; height: 76px; display: grid; place-items: center; border: 1px solid #ffdacb; border-radius: 50%; background: #3d061cc9; color: #ffe8d9; box-shadow: 0 0 25px #ef204770, inset 0 0 18px #ff829333; backdrop-filter: blur(8px); cursor: pointer; z-index: 2; }
+.video-play:hover { background: #790d28e6; box-shadow: 0 0 32px #ff456580; }
+.video-play svg { width: 32px; height: 32px; }
+.video-play .pause-symbol { display: none; }
+.dance-video-card.is-playing .video-play { top: auto; left: auto; bottom: 16px; right: 16px; transform: none; width: 46px; height: 46px; }
+.dance-video-card.is-playing .play-symbol { display: none; }
+.dance-video-card.is-playing .pause-symbol { display: block; }
+.video-feedback { position: absolute; left: 16px; right: 16px; bottom: 18px; color: #fff0e9; background: #21050be6; border-radius: 10px; padding: 10px; font-size: 13px; text-align: center; pointer-events: none; }
+.video-feedback:empty { display: none; }
+
+/* Quiet text sections leave the luminous frames to prices and videos. */
+.about > .container, .journey > .container, .faq > .container { padding: 12px 0; }
+.about:not(#about-me) > .container { max-width: 780px; }
+.detail-item { border-top: 1px solid #a35b5555; padding: 20px 0; }
+.section-divider { opacity: .65; }
+.booking-actions { display: grid; gap: 10px; margin-top: 24px; }
+.booking-actions .format-button { margin: 0; }
+.booking-secondary { background: transparent; border-color: #a35b55; }
+.booking-choice-note { margin-top: 16px; }
+[hidden] { display: none !important; }
+/* Native scrolling supports touch and trackpads; arrows also work with a mouse. */
+.dance-video-grid { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding: 14px 2px 20px; scroll-padding-left: 2px; }
+.dance-video-grid::-webkit-scrollbar { display: none; }
+.dance-video-card { flex: 0 0 38%; scroll-snap-align: start; }
+.dance-video-grid::after { content: ''; flex: 0 0 calc(62% - 22px); }
+.gallery-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 6px; }
+.gallery-arrow { width: 46px; height: 46px; border-radius: 50%; border: 1px solid #a55054; background: #230507; color: var(--rose); cursor: pointer; font-size: 23px; }
+.gallery-arrow:disabled { opacity: .3; cursor: default; }
+.gallery-dots { display: flex; gap: 2px; }
+.gallery-dot { width: 36px; height: 44px; display: grid; place-items: center; border: 0; background: none; cursor: pointer; }
+.gallery-dot span { display: block; width: 6px; height: 6px; border-radius: 50%; background: #8c5254; transition: width .2s, background .2s; }
+.gallery-dot[aria-current="true"] span { width: 22px; border-radius: 9px; background: var(--rose); box-shadow: 0 0 10px #ff777744; }
+.mobile-booking { display: none; }
+@media (max-width: 600px) {
+ .dance-video-grid { gap: 16px; }
+ .dance-video-card { flex-basis: 85%; }
+ .dance-video-grid::after { flex-basis: calc(15% - 16px); }
+ .mobile-booking { display: flex; position: fixed; bottom: calc(14px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 18; gap: 28px; background: #4b0a16f2; box-shadow: 0 6px 25px #0008; backdrop-filter: blur(12px); }
+ body:has(dialog[open]) .mobile-booking, body:has(.mobile-menu.open) .mobile-booking { display: none; }
+ footer { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-logo" aria-label="Ева — на главную">EVA <span>Latina choreo</span></a>
+    <ul class="navbar-links">
+      <li><a href="#price">Стоимость</a></li>
+      <li><a href="#booking">Запись</a></li>
+      <li><a href="#formats">Форматы</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://t.me/evavasilyyevna" target="_blank">Telegram</a></li>
+    </ul>
+    <button class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<ul class="mobile-menu" id="mobileMenu">
+  <li><a href="#price">Стоимость</a></li>
+  <li><a href="#booking">Запись</a></li>
+  <li><a href="#formats">Форматы</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="https://t.me/evavasilyyevna" target="_blank">Telegram</a></li>
+</ul>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-sparkle-tl">
+    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  </div>
+  <div class="hero-sparkle-br">
+    <svg width="30" height="30" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  </div>
+
+  <p class="hero-eyebrow">Москва · Latina choreo</p>
+  <h1>
+    <span class="hero-name">EVA</span>
+    <span class="script-line">Latina choreo</span>
+    <span class="hero-subtitle">покажу тебе, какая ты роскошная</span>
+  </h1>
+  <a href="#booking" class="btn btn-hero">Записаться</a>
+  <div class="scroll-hint"><span></span></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+      О занятиях
+    </p>
+    <h2 class="section-heading">Как проходят <span class="script-accent">занятия</span></h2>
+    <p>Индивидуально, с подружками или в группе — в твоём ритме. На индивидуальных занятиях я подбираю программу под твой уровень и цели.</p>
+    <p>Если ты никогда не танцевала — отлично. Мы начнём с того, как тело слышит музыку, с&nbsp;пластичности каждой части тела, знакомства со стилем. Если уже есть база — углубимся в&nbsp;технику, стиль.</p>
+    <p>Каждое занятие — это разминка, работа над движением и кусочек хореографии.</p>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- ABOUT ME -->
+<section class="about" id="about-me">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+      Обо мне
+    </p>
+    <h2 class="section-heading"><span class="script-accent">Ева</span></h2>
+    <div class="about-me-layout">
+      <video autoplay muted loop playsinline class="about-me-photo" style="object-fit:cover;">
+        <source src="about.mp4" type="video/mp4">
+      </video>
+      <div>
+        <p>Три года назад я пришла в латину — и не смогла остановиться. За последний год выросла и&nbsp;в&nbsp;технике, и&nbsp;в&nbsp;том, как чувствую движение. Сейчас преподаю и собираю в&nbsp;своих хореографиях всё, что люблю: базу латины, high heels, партер, иногда хип-хоп — иногда что-то, чему ещё нет названия.</p>
+        <p>Румба — это нежность и медленный огонь. Самба — дерзость и скорость. Ча-ча-ча — чистая любовь к&nbsp;жизни. Мне нравится, что одно направление может передать совершенно разный характер.</p>
+        <p>Занятия для меня — это энергообмен. Я верю, что в&nbsp;каждой уже есть и&nbsp;хрупкость, и&nbsp;сила, и&nbsp;пластика — нужно только дать этому пространство. Я помогу расслабить тело, поймать движение и&nbsp;прийти к&nbsp;тому, за&nbsp;чем ты пришла: уверенность в&nbsp;себе, красивые видео, импровизация или просто час, когда ты ни о&nbsp;чём не думаешь.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- VIDEO GALLERY -->
+<section class="dance-gallery" id="dance-videos" aria-labelledby="dance-videos-title">
+  <div class="container">
+    <header class="gallery-heading">
+      <h2 class="section-heading" id="dance-videos-title">Вот как мы будем <span class="script-accent">танцевать</span></h2>
+      <p class="gallery-intro">Нежно, дерзко, в удовольствие. Будем искать твой характер в движении, пробовать новое и собирать хореографии, в которых ты нравишься себе.</p>
+    </header>
+    <div class="dance-video-grid" id="dance-track" tabindex="0" role="region" aria-label="Видео занятий — листай в сторону">
+      <figure class="dance-video-card glow-card">
+        <video muted playsinline preload="none" poster="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22800%22%20viewBox%3D%220%200%20600%20800%22%3E%0A%20%3Cdefs%3E%0A%20%3CradialGradient%20id%3D%22red%22%20cx%3D%220.16666666666666666%22%20cy%3D%22.35%22%20r%3D%22.85%22%3E%3Cstop%20stop-color%3D%22%238c0319%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23260209%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23060102%22%2F%3E%3C%2FradialGradient%3E%0A%20%3ClinearGradient%20id%3D%22metal%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%22.6%22%3E%3Cstop%20stop-color%3D%22%238b4340%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23ffe9d3%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23ca7771%22%2F%3E%3Cstop%20offset%3D%22.65%22%20stop-color%3D%22%23fff0df%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ad4c4b%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22silk%22%3E%3Cstop%20stop-color%3D%22%23ed123a%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23d41030%22%20stop-opacity%3D%22.6%22%2F%3E%3Cstop%20offset%3D%22.54%22%20stop-color%3D%22%23ff7681%22%20stop-opacity%3D%22.35%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23600616%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%2223%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22glow%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22shadow%22%3E%3CfeDropShadow%20dx%3D%227%22%20dy%3D%2212%22%20stdDeviation%3D%229%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.85%22%2F%3E%3C%2Ffilter%3E%0A%20%3C%2Fdefs%3E%0A%20%3Crect%20width%3D%22600%22%20height%3D%22800%22%20fill%3D%22url%28%23red%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-150%20700C550%20550%2090%20240%20730%2060%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%22140%22%20filter%3D%22url%28%23blur%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-120%20720C500%20510%20250%20300%20670%20100%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%2245%22%20opacity%3D%22.55%22%2F%3E%0A%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22552%22%20height%3D%22752%22%20rx%3D%22110%22%20fill%3D%22none%22%20stroke%3D%22%23d89183%22%20stroke-opacity%3D%22.32%22%2F%3E%0A%20%3Crect%20x%3D%2234%22%20y%3D%2234%22%20width%3D%22532%22%20height%3D%22732%22%20rx%3D%22103%22%20fill%3D%22none%22%20stroke%3D%22%23ad5b62%22%20stroke-opacity%3D%22.19%22%2F%3E%0A%20%3Cg%20stroke%3D%22%23db9387%22%20fill%3D%22none%22%20opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M65%20163Q65%2065%20164%2065M436%2065Q535%2065%20535%20163M65%20637Q65%20735%20164%20735M436%20735Q535%20735%20535%20637%22%2F%3E%3Cpath%20d%3D%22M287%2070l13-16%2013%2016-13%2016zM287%20730l13-16%2013%2016-13%2016z%22%2F%3E%3C%2Fg%3E%0A%20%3Cg%20transform%3D%22rotate%28-24%20300%20395%29%22%20filter%3D%22url%28%23shadow%29%22%20stroke%3D%22url%28%23metal%29%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%3Cpath%20d%3D%22M293%20335L293%20594Q300%20609%20307%20594L307%20335%22%20fill%3D%22%237a3435%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20359V589%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M309%20540h54v19h-17v20h17v19h-54v-16h19v-24h-19z%22%20fill%3D%22url%28%23metal%29%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M324%20549h28M336%20587h17%22%20stroke%3D%22%236c2e30%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M283%20349h34M286%20357h28M284%20511h32M284%20519h32%22%20stroke-width%3D%225%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20335C267%20329%20242%20309%20242%20278C222%20255%20234%20215%20262%20211C260%20185%20283%20177%20300%20193C317%20177%20340%20185%20338%20211C366%20215%20378%20255%20358%20278C358%20309%20333%20329%20300%20335Z%22%20fill%3D%22%2320060b%22%20stroke-width%3D%227%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20320C276%20315%20258%20300%20258%20278C243%20259%20248%20233%20274%20228C272%20214%20285%20209%20300%20224C315%20209%20328%20214%20326%20228C352%20233%20357%20259%20342%20278C342%20300%20324%20315%20300%20320Z%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20304C293%20293%20267%20284%20267%20265C267%20247%20289%20244%20300%20260C311%20244%20333%20247%20333%20265C333%20284%20307%20293%20300%20304Z%22%20fill%3D%22none%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M251%20260C220%20241%20228%20293%20257%20291M349%20260C380%20241%20372%20293%20343%20291M271%20313C261%20337%20288%20345%20300%20328M329%20313C339%20337%20312%20345%20300%20328%22%20fill%3D%22none%22%20stroke-width%3D%223%22%2F%3E%0A%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22205%22%20r%3D%225%22%20fill%3D%22%23fcd8bd%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M293%20331l7-9%207%209-7%209z%22%20fill%3D%22%23cf2044%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20178v-20m-10%2010h20%22%20stroke-width%3D%222%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23ffe5d3%22%3E%3Cpath%20d%3D%22M435%20226Q437%20243%20454%20245Q437%20247%20435%20264Q433%20247%20416%20245Q433%20243%20435%20226Z%22%2F%3E%3Cpath%20d%3D%22M170%20541Q171%20550%20180%20551Q171%20552%20170%20561Q169%20552%20160%20551Q169%20550%20170%20541Z%22%2F%3E%3C%2Fg%3E%0A%20%3Ccircle%20cx%3D%22435%22%20cy%3D%22245%22%20r%3D%227%22%20fill%3D%22%23ff8296%22%20opacity%3D%22.6%22%20filter%3D%22url%28%23glow%29%22%2F%3E%0A%20%3C%2Fsvg%3E" aria-label="Танцы с Евой — видео 1">
+          <source src="2/videos/dance-1.mp4" type="video/mp4">
+          <a href="2/videos/dance-1.mp4">Смотреть видео 1</a>
+        </video>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео 1" aria-pressed="false">
+          <svg class="play-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 7L26 16L12 25Z" fill="currentColor"/></svg>
+          <svg class="pause-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 8H14V24H10ZM19 8H23V24H19Z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-feedback" role="status" aria-live="polite"></span>
+      </figure>
+      <figure class="dance-video-card glow-card">
+        <video muted playsinline preload="none" poster="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22800%22%20viewBox%3D%220%200%20600%20800%22%3E%0A%20%3Cdefs%3E%0A%20%3CradialGradient%20id%3D%22red%22%20cx%3D%220.8333333333333334%22%20cy%3D%22.35%22%20r%3D%22.85%22%3E%3Cstop%20stop-color%3D%22%238c0319%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23260209%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23060102%22%2F%3E%3C%2FradialGradient%3E%0A%20%3ClinearGradient%20id%3D%22metal%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%22.6%22%3E%3Cstop%20stop-color%3D%22%238b4340%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23ffe9d3%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23ca7771%22%2F%3E%3Cstop%20offset%3D%22.65%22%20stop-color%3D%22%23fff0df%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ad4c4b%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22silk%22%3E%3Cstop%20stop-color%3D%22%23ed123a%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23d41030%22%20stop-opacity%3D%22.6%22%2F%3E%3Cstop%20offset%3D%22.54%22%20stop-color%3D%22%23ff7681%22%20stop-opacity%3D%22.35%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23600616%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%2223%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22glow%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22shadow%22%3E%3CfeDropShadow%20dx%3D%227%22%20dy%3D%2212%22%20stdDeviation%3D%229%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.85%22%2F%3E%3C%2Ffilter%3E%0A%20%3C%2Fdefs%3E%0A%20%3Crect%20width%3D%22600%22%20height%3D%22800%22%20fill%3D%22url%28%23red%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-150%20700C550%20550%2090%20240%20730%2060%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%22140%22%20filter%3D%22url%28%23blur%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-120%20720C500%20510%20250%20300%20670%20100%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%2245%22%20opacity%3D%22.55%22%2F%3E%0A%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22552%22%20height%3D%22752%22%20rx%3D%22110%22%20fill%3D%22none%22%20stroke%3D%22%23d89183%22%20stroke-opacity%3D%22.32%22%2F%3E%0A%20%3Crect%20x%3D%2234%22%20y%3D%2234%22%20width%3D%22532%22%20height%3D%22732%22%20rx%3D%22103%22%20fill%3D%22none%22%20stroke%3D%22%23ad5b62%22%20stroke-opacity%3D%22.19%22%2F%3E%0A%20%3Cg%20stroke%3D%22%23db9387%22%20fill%3D%22none%22%20opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M65%20163Q65%2065%20164%2065M436%2065Q535%2065%20535%20163M65%20637Q65%20735%20164%20735M436%20735Q535%20735%20535%20637%22%2F%3E%3Cpath%20d%3D%22M287%2070l13-16%2013%2016-13%2016zM287%20730l13-16%2013%2016-13%2016z%22%2F%3E%3C%2Fg%3E%0A%20%3Cg%20transform%3D%22rotate%2822%20300%20395%29%22%20filter%3D%22url%28%23shadow%29%22%20stroke%3D%22url%28%23metal%29%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%3Cpath%20d%3D%22M293%20335L293%20594Q300%20609%20307%20594L307%20335%22%20fill%3D%22%237a3435%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20359V589%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M309%20540h54v19h-17v20h17v19h-54v-16h19v-24h-19z%22%20fill%3D%22url%28%23metal%29%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M324%20549h28M336%20587h17%22%20stroke%3D%22%236c2e30%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M283%20349h34M286%20357h28M284%20511h32M284%20519h32%22%20stroke-width%3D%225%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20335C267%20329%20242%20309%20242%20278C222%20255%20234%20215%20262%20211C260%20185%20283%20177%20300%20193C317%20177%20340%20185%20338%20211C366%20215%20378%20255%20358%20278C358%20309%20333%20329%20300%20335Z%22%20fill%3D%22%2320060b%22%20stroke-width%3D%227%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20320C276%20315%20258%20300%20258%20278C243%20259%20248%20233%20274%20228C272%20214%20285%20209%20300%20224C315%20209%20328%20214%20326%20228C352%20233%20357%20259%20342%20278C342%20300%20324%20315%20300%20320Z%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20304C293%20293%20267%20284%20267%20265C267%20247%20289%20244%20300%20260C311%20244%20333%20247%20333%20265C333%20284%20307%20293%20300%20304Z%22%20fill%3D%22none%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M251%20260C220%20241%20228%20293%20257%20291M349%20260C380%20241%20372%20293%20343%20291M271%20313C261%20337%20288%20345%20300%20328M329%20313C339%20337%20312%20345%20300%20328%22%20fill%3D%22none%22%20stroke-width%3D%223%22%2F%3E%0A%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22205%22%20r%3D%225%22%20fill%3D%22%23fcd8bd%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M293%20331l7-9%207%209-7%209z%22%20fill%3D%22%23cf2044%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20178v-20m-10%2010h20%22%20stroke-width%3D%222%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23ffe5d3%22%3E%3Cpath%20d%3D%22M435%20226Q437%20243%20454%20245Q437%20247%20435%20264Q433%20247%20416%20245Q433%20243%20435%20226Z%22%2F%3E%3Cpath%20d%3D%22M170%20541Q171%20550%20180%20551Q171%20552%20170%20561Q169%20552%20160%20551Q169%20550%20170%20541Z%22%2F%3E%3C%2Fg%3E%0A%20%3Ccircle%20cx%3D%22435%22%20cy%3D%22245%22%20r%3D%227%22%20fill%3D%22%23ff8296%22%20opacity%3D%22.6%22%20filter%3D%22url%28%23glow%29%22%2F%3E%0A%20%3C%2Fsvg%3E" aria-label="Танцы с Евой — видео 2">
+          <source src="3/videos/dance-2.mp4" type="video/mp4">
+          <a href="3/videos/dance-2.mp4">Смотреть видео 2</a>
+        </video>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео 2" aria-pressed="false">
+          <svg class="play-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 7L26 16L12 25Z" fill="currentColor"/></svg>
+          <svg class="pause-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 8H14V24H10ZM19 8H23V24H19Z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-feedback" role="status" aria-live="polite"></span>
+      </figure>
+      <figure class="dance-video-card glow-card">
+        <video muted playsinline preload="none" poster="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22800%22%20viewBox%3D%220%200%20600%20800%22%3E%0A%20%3Cdefs%3E%0A%20%3CradialGradient%20id%3D%22red%22%20cx%3D%220.75%22%20cy%3D%22.35%22%20r%3D%22.85%22%3E%3Cstop%20stop-color%3D%22%238c0319%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23260209%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23060102%22%2F%3E%3C%2FradialGradient%3E%0A%20%3ClinearGradient%20id%3D%22metal%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%22.6%22%3E%3Cstop%20stop-color%3D%22%238b4340%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23ffe9d3%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23ca7771%22%2F%3E%3Cstop%20offset%3D%22.65%22%20stop-color%3D%22%23fff0df%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ad4c4b%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22silk%22%3E%3Cstop%20stop-color%3D%22%23ed123a%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23d41030%22%20stop-opacity%3D%22.6%22%2F%3E%3Cstop%20offset%3D%22.54%22%20stop-color%3D%22%23ff7681%22%20stop-opacity%3D%22.35%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23600616%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%2223%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22glow%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22shadow%22%3E%3CfeDropShadow%20dx%3D%227%22%20dy%3D%2212%22%20stdDeviation%3D%229%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.85%22%2F%3E%3C%2Ffilter%3E%0A%20%3C%2Fdefs%3E%0A%20%3Crect%20width%3D%22600%22%20height%3D%22800%22%20fill%3D%22url%28%23red%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-150%20700C550%20550%2090%20240%20730%2060%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%22140%22%20filter%3D%22url%28%23blur%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-120%20720C500%20510%20250%20300%20670%20100%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%2245%22%20opacity%3D%22.55%22%2F%3E%0A%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22552%22%20height%3D%22752%22%20rx%3D%22110%22%20fill%3D%22none%22%20stroke%3D%22%23d89183%22%20stroke-opacity%3D%22.32%22%2F%3E%0A%20%3Crect%20x%3D%2234%22%20y%3D%2234%22%20width%3D%22532%22%20height%3D%22732%22%20rx%3D%22103%22%20fill%3D%22none%22%20stroke%3D%22%23ad5b62%22%20stroke-opacity%3D%22.19%22%2F%3E%0A%20%3Cg%20stroke%3D%22%23db9387%22%20fill%3D%22none%22%20opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M65%20163Q65%2065%20164%2065M436%2065Q535%2065%20535%20163M65%20637Q65%20735%20164%20735M436%20735Q535%20735%20535%20637%22%2F%3E%3Cpath%20d%3D%22M287%2070l13-16%2013%2016-13%2016zM287%20730l13-16%2013%2016-13%2016z%22%2F%3E%3C%2Fg%3E%0A%20%3Cg%20transform%3D%22rotate%28-14%20300%20395%29%22%20filter%3D%22url%28%23shadow%29%22%20stroke%3D%22url%28%23metal%29%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%3Cpath%20d%3D%22M293%20335L293%20594Q300%20609%20307%20594L307%20335%22%20fill%3D%22%237a3435%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20359V589%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M309%20540h54v19h-17v20h17v19h-54v-16h19v-24h-19z%22%20fill%3D%22url%28%23metal%29%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M324%20549h28M336%20587h17%22%20stroke%3D%22%236c2e30%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M283%20349h34M286%20357h28M284%20511h32M284%20519h32%22%20stroke-width%3D%225%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20335C267%20329%20242%20309%20242%20278C222%20255%20234%20215%20262%20211C260%20185%20283%20177%20300%20193C317%20177%20340%20185%20338%20211C366%20215%20378%20255%20358%20278C358%20309%20333%20329%20300%20335Z%22%20fill%3D%22%2320060b%22%20stroke-width%3D%227%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20320C276%20315%20258%20300%20258%20278C243%20259%20248%20233%20274%20228C272%20214%20285%20209%20300%20224C315%20209%20328%20214%20326%20228C352%20233%20357%20259%20342%20278C342%20300%20324%20315%20300%20320Z%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20304C293%20293%20267%20284%20267%20265C267%20247%20289%20244%20300%20260C311%20244%20333%20247%20333%20265C333%20284%20307%20293%20300%20304Z%22%20fill%3D%22none%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M251%20260C220%20241%20228%20293%20257%20291M349%20260C380%20241%20372%20293%20343%20291M271%20313C261%20337%20288%20345%20300%20328M329%20313C339%20337%20312%20345%20300%20328%22%20fill%3D%22none%22%20stroke-width%3D%223%22%2F%3E%0A%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22205%22%20r%3D%225%22%20fill%3D%22%23fcd8bd%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M293%20331l7-9%207%209-7%209z%22%20fill%3D%22%23cf2044%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20178v-20m-10%2010h20%22%20stroke-width%3D%222%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23ffe5d3%22%3E%3Cpath%20d%3D%22M435%20226Q437%20243%20454%20245Q437%20247%20435%20264Q433%20247%20416%20245Q433%20243%20435%20226Z%22%2F%3E%3Cpath%20d%3D%22M170%20541Q171%20550%20180%20551Q171%20552%20170%20561Q169%20552%20160%20551Q169%20550%20170%20541Z%22%2F%3E%3C%2Fg%3E%0A%20%3Ccircle%20cx%3D%22435%22%20cy%3D%22245%22%20r%3D%227%22%20fill%3D%22%23ff8296%22%20opacity%3D%22.6%22%20filter%3D%22url%28%23glow%29%22%2F%3E%0A%20%3C%2Fsvg%3E" aria-label="Танцы с Евой — видео 3">
+          <source src="1/videos/dance-3.mp4" type="video/mp4">
+          <a href="1/videos/dance-3.mp4">Смотреть видео 3</a>
+        </video>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео 3" aria-pressed="false">
+          <svg class="play-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 7L26 16L12 25Z" fill="currentColor"/></svg>
+          <svg class="pause-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 8H14V24H10ZM19 8H23V24H19Z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-feedback" role="status" aria-live="polite"></span>
+      </figure>
+      <figure class="dance-video-card glow-card">
+        <video muted playsinline preload="none" poster="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22800%22%20viewBox%3D%220%200%20600%20800%22%3E%0A%20%3Cdefs%3E%0A%20%3CradialGradient%20id%3D%22red%22%20cx%3D%220.2%22%20cy%3D%22.35%22%20r%3D%22.85%22%3E%3Cstop%20stop-color%3D%22%238c0319%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23260209%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23060102%22%2F%3E%3C%2FradialGradient%3E%0A%20%3ClinearGradient%20id%3D%22metal%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%22.6%22%3E%3Cstop%20stop-color%3D%22%238b4340%22%2F%3E%3Cstop%20offset%3D%22.28%22%20stop-color%3D%22%23ffe9d3%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23ca7771%22%2F%3E%3Cstop%20offset%3D%22.65%22%20stop-color%3D%22%23fff0df%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ad4c4b%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22silk%22%3E%3Cstop%20stop-color%3D%22%23ed123a%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.48%22%20stop-color%3D%22%23d41030%22%20stop-opacity%3D%22.6%22%2F%3E%3Cstop%20offset%3D%22.54%22%20stop-color%3D%22%23ff7681%22%20stop-opacity%3D%22.35%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23600616%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%2223%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22glow%22%3E%3CfeGaussianBlur%20stdDeviation%3D%224%22%2F%3E%3C%2Ffilter%3E%0A%20%3Cfilter%20id%3D%22shadow%22%3E%3CfeDropShadow%20dx%3D%227%22%20dy%3D%2212%22%20stdDeviation%3D%229%22%20flood-color%3D%22%23000%22%20flood-opacity%3D%22.85%22%2F%3E%3C%2Ffilter%3E%0A%20%3C%2Fdefs%3E%0A%20%3Crect%20width%3D%22600%22%20height%3D%22800%22%20fill%3D%22url%28%23red%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-150%20700C550%20550%2090%20240%20730%2060%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%22140%22%20filter%3D%22url%28%23blur%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M-120%20720C500%20510%20250%20300%20670%20100%22%20fill%3D%22none%22%20stroke%3D%22url%28%23silk%29%22%20stroke-width%3D%2245%22%20opacity%3D%22.55%22%2F%3E%0A%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%22552%22%20height%3D%22752%22%20rx%3D%22110%22%20fill%3D%22none%22%20stroke%3D%22%23d89183%22%20stroke-opacity%3D%22.32%22%2F%3E%0A%20%3Crect%20x%3D%2234%22%20y%3D%2234%22%20width%3D%22532%22%20height%3D%22732%22%20rx%3D%22103%22%20fill%3D%22none%22%20stroke%3D%22%23ad5b62%22%20stroke-opacity%3D%22.19%22%2F%3E%0A%20%3Cg%20stroke%3D%22%23db9387%22%20fill%3D%22none%22%20opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M65%20163Q65%2065%20164%2065M436%2065Q535%2065%20535%20163M65%20637Q65%20735%20164%20735M436%20735Q535%20735%20535%20637%22%2F%3E%3Cpath%20d%3D%22M287%2070l13-16%2013%2016-13%2016zM287%20730l13-16%2013%2016-13%2016z%22%2F%3E%3C%2Fg%3E%0A%20%3Cg%20transform%3D%22rotate%2828%20300%20395%29%22%20filter%3D%22url%28%23shadow%29%22%20stroke%3D%22url%28%23metal%29%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%3Cpath%20d%3D%22M293%20335L293%20594Q300%20609%20307%20594L307%20335%22%20fill%3D%22%237a3435%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20359V589%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M309%20540h54v19h-17v20h17v19h-54v-16h19v-24h-19z%22%20fill%3D%22url%28%23metal%29%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M324%20549h28M336%20587h17%22%20stroke%3D%22%236c2e30%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M283%20349h34M286%20357h28M284%20511h32M284%20519h32%22%20stroke-width%3D%225%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20335C267%20329%20242%20309%20242%20278C222%20255%20234%20215%20262%20211C260%20185%20283%20177%20300%20193C317%20177%20340%20185%20338%20211C366%20215%20378%20255%20358%20278C358%20309%20333%20329%20300%20335Z%22%20fill%3D%22%2320060b%22%20stroke-width%3D%227%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20320C276%20315%20258%20300%20258%20278C243%20259%20248%20233%20274%20228C272%20214%20285%20209%20300%20224C315%20209%20328%20214%20326%20228C352%20233%20357%20259%20342%20278C342%20300%20324%20315%20300%20320Z%22%20fill%3D%22none%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20304C293%20293%20267%20284%20267%20265C267%20247%20289%20244%20300%20260C311%20244%20333%20247%20333%20265C333%20284%20307%20293%20300%20304Z%22%20fill%3D%22none%22%20stroke-width%3D%224%22%2F%3E%0A%20%3Cpath%20d%3D%22M251%20260C220%20241%20228%20293%20257%20291M349%20260C380%20241%20372%20293%20343%20291M271%20313C261%20337%20288%20345%20300%20328M329%20313C339%20337%20312%20345%20300%20328%22%20fill%3D%22none%22%20stroke-width%3D%223%22%2F%3E%0A%20%3Ccircle%20cx%3D%22300%22%20cy%3D%22205%22%20r%3D%225%22%20fill%3D%22%23fcd8bd%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M293%20331l7-9%207%209-7%209z%22%20fill%3D%22%23cf2044%22%20stroke-width%3D%222%22%2F%3E%0A%20%3Cpath%20d%3D%22M300%20178v-20m-10%2010h20%22%20stroke-width%3D%222%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cg%20fill%3D%22%23ffe5d3%22%3E%3Cpath%20d%3D%22M435%20226Q437%20243%20454%20245Q437%20247%20435%20264Q433%20247%20416%20245Q433%20243%20435%20226Z%22%2F%3E%3Cpath%20d%3D%22M170%20541Q171%20550%20180%20551Q171%20552%20170%20561Q169%20552%20160%20551Q169%20550%20170%20541Z%22%2F%3E%3C%2Fg%3E%0A%20%3Ccircle%20cx%3D%22435%22%20cy%3D%22245%22%20r%3D%227%22%20fill%3D%22%23ff8296%22%20opacity%3D%22.6%22%20filter%3D%22url%28%23glow%29%22%2F%3E%0A%20%3C%2Fsvg%3E" aria-label="Танцы с Евой — видео 4">
+          <source src="4/videos/dance-4.mp4" type="video/mp4">
+          <a href="4/videos/dance-4.mp4">Смотреть видео 4</a>
+        </video>
+        <button class="video-play" type="button" aria-label="Воспроизвести видео 4" aria-pressed="false">
+          <svg class="play-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M12 7L26 16L12 25Z" fill="currentColor"/></svg>
+          <svg class="pause-symbol" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 8H14V24H10ZM19 8H23V24H19Z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-feedback" role="status" aria-live="polite"></span>
+      </figure>
+    </div>
+  <div class="gallery-controls" aria-label="Переключение видео">
+<button class="gallery-arrow" id="gallery-prev" type="button" aria-label="Предыдущее видео" aria-controls="dance-track">←</button>
+<div class="gallery-dots">
+<button class="gallery-dot" type="button" aria-label="Показать видео 1" aria-controls="dance-track" aria-current="true"><span></span></button>
+<button class="gallery-dot" type="button" aria-label="Показать видео 2" aria-controls="dance-track" aria-current="false"><span></span></button>
+<button class="gallery-dot" type="button" aria-label="Показать видео 3" aria-controls="dance-track" aria-current="false"><span></span></button>
+<button class="gallery-dot" type="button" aria-label="Показать видео 4" aria-controls="dance-track" aria-current="false"><span></span></button>
+</div>
+<button class="gallery-arrow" id="gallery-next" type="button" aria-label="Следующее видео" aria-controls="dance-track">→</button>
+</div>
+</div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  <span class="line"></span>
+</div>
+
+<section class="formats" id="price" aria-labelledby="formats-title">
+<div id="formats" class="formats-wrap">
+<header class="formats-heading">
+<p>Форматы занятий</p>
+<h2 id="formats-title">EVA</h2>
+<span>Latina choreo</span>
+</header>
+<nav class="format-nav" aria-label="Форматы занятий">
+<a href="#all-formats">Все</a>
+<a href="#format-individual">Индивидуальные занятия</a>
+<a href="#format-friends">С подружкой</a>
+<a href="#format-ecl">ECL EVA</a>
+<a href="#format-base-wed">BASE ср</a>
+<a href="#format-base-sat">BASE сб</a>
+</nav>
+<div class="format-grid" id="all-formats">
+<article class="format-card glow-card" id="format-individual" aria-labelledby="title-individual">
+<span class="format-number">01 / ФОРМАТ ЗАНЯТИЙ</span>
+<h3 id="title-individual">Индивидуальные занятия</h3>
+
+<div class="format-rule">
+</div>
+<p class="format-price"><span class="money">2500₽</span> <small>/ час</small>
+</p>
+<p class="hall-note">+ аренда зала отдельно<br>зал от <span class="money">600₽</span> / час</p>
+<h4>Пакеты занятий</h4>
+<dl class="packages">
+<div>
+<dt>3–5 часов</dt>
+<dd><span class="money">2300₽</span> <small>/ час</small>
+</dd>
+</div>
+<div>
+<dt>5–9 часов</dt>
+<dd><span class="money">2100₽</span> <small>/ час</small>
+</dd>
+</div>
+<div>
+<dt>от 10 часов</dt>
+<dd><span class="money">1900₽</span> <small>/ час</small>
+</dd>
+</div>
+</dl>
+<h4>Что входит</h4>
+<ul class="format-list">
+<li>База</li>
+<li>Разбор хореографии</li>
+<li>Танец под настроение или событие</li>
+</ul>
+<p class="format-meta">Стиль: Latina choreo<br>Уровень: с нуля / продолжающие</p>
+<a href="#booking" class="format-button" data-format="Индивидуальные занятия">Записаться ↗</a>
+</article>
+<article class="format-card glow-card" id="format-friends" aria-labelledby="title-friends">
+<span class="format-number">02 / ФОРМАТ ЗАНЯТИЙ</span>
+<h3 id="title-friends">С подружками</h3>
+<p class="format-subtitle">Формат 2–4 человека</p>
+<div class="format-rule">
+</div>
+<dl class="packages friends-prices">
+<div>
+<dt>2 человека</dt>
+<dd><span class="money">2200₽</span> <small>/ час</small>
+</dd>
+</div>
+<div>
+<dt>3 человека</dt>
+<dd><span class="money">2000₽</span> <small>/ час</small>
+</dd>
+</div>
+<div>
+<dt>4 человека</dt>
+<dd><span class="money">1800₽</span> <small>/ час</small>
+</dd>
+</div>
+</dl>
+<p class="hall-note">Стоимость указана с человека.<br>+ аренда зала отдельно<br>зал от <span class="money">600₽</span> / час</p>
+<ul class="format-list">
+<li>Уровень: с нуля / продолжающие</li>
+<li>Занятие своим составом</li>
+</ul>
+<a href="#booking" class="format-button" data-format="С подружками">Записаться ↗</a>
+</article>
+<article class="format-card glow-card" id="format-ecl" aria-labelledby="title-ecl">
+<span class="format-number">03 / ФОРМАТ ЗАНЯТИЙ</span>
+<h3 id="title-ecl">ECL EVA</h3>
+<p class="format-subtitle">Закрытая постоянная группа</p>
+<div class="format-rule">
+</div>
+<p class="format-price"><span class="money">6500₽</span> <small>/ месяц</small>
+</p>
+<ul class="format-list">
+<li>Пятница, 19:00–21:00</li>
+<li>8 часов занятий в месяц</li>
+<li>м. Комсомольская</li>
+<li>Уровень: с нуля / продолжающие</li>
+</ul>
+<a href="#booking" class="format-button" data-format="ECL EVA">Записаться ↗</a>
+</article>
+<article class="format-card glow-card" id="format-base-wed" aria-labelledby="title-base-wed">
+<span class="format-number">04 / ФОРМАТ ЗАНЯТИЙ</span>
+<h3 id="title-base-wed">BASE ср</h3>
+<p class="format-subtitle">Мини-группа</p>
+<div class="format-rule">
+</div>
+<p class="format-price"><span class="money">8000₽</span> <small>/ месяц</small>
+</p>
+<ul class="format-list">
+<li>Среда, 19:00–21:00</li>
+<li>8 часов занятий в месяц</li>
+<li>До 7 человек</li>
+<li>м. Павелецкая</li>
+<li>Уровень: с нуля / продолжающие</li>
+</ul>
+<h4>В формате BASE входит</h4>
+<ul class="format-list">
+<li>Индивидуальные занятия для участниц — <span class="money">2000₽</span> / час</li>
+<li>Творческие задания и съёмки</li>
+<li>Комьюнити и поддержка</li>
+</ul>
+<a href="#booking" class="format-button" data-format="BASE ср">Записаться ↗</a>
+</article>
+<article class="format-card glow-card" id="format-base-sat" aria-labelledby="title-base-sat">
+<span class="format-number">05 / ФОРМАТ ЗАНЯТИЙ</span>
+<h3 id="title-base-sat">BASE сб</h3>
+<p class="format-subtitle">Мини-группа</p>
+<div class="format-rule">
+</div>
+<p class="format-price"><span class="money">8000₽</span> <small>/ месяц</small>
+</p>
+<ul class="format-list">
+<li>Суббота, 13:00–15:00</li>
+<li>8 часов занятий в месяц</li>
+<li>До 7 человек</li>
+<li>м. Павелецкая</li>
+<li>Уровень: с нуля / продолжающие</li>
+</ul>
+<h4>В формате BASE входит</h4>
+<ul class="format-list">
+<li>Индивидуальные занятия для участниц — <span class="money">2000₽</span> / час</li>
+<li>Творческие задания и съёмки</li>
+<li>Комьюнити и поддержка</li>
+</ul>
+<a href="#booking" class="format-button" data-format="BASE сб">Записаться ↗</a>
+</article>
+</div>
+</div>
+</section>
+<dialog class="booking" id="booking" aria-labelledby="booking-title">
+<div class="booking-card">
+<button class="booking-close" type="button" aria-label="Закрыть окно записи" autofocus>×</button>
+<p class="booking-eyebrow">Твой первый шаг</p>
+<h2 id="booking-title">Потанцуем?</h2>
+<p>Выбери формат — и напиши мне. Вместе уточним детали и договоримся о занятии.</p>
+<div class="booking-actions">
+<a class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Написать Еве ↗</a>
+<button class="format-button booking-secondary" id="prepareBooking" type="button" aria-expanded="false" aria-controls="bookingForm">Подготовить сообщение</button>
+</div>
+<p class="booking-choice-note">Можно сразу написать мне или заполнить короткую форму — она соберёт сообщение за тебя.</p>
+<form id="bookingForm" hidden>
+<label for="bookingName">Как тебя зовут</label>
+<input id="bookingName" name="name" autocomplete="given-name" maxlength="80" required placeholder="Твоё имя">
+<label for="bookingFormat">Формат занятий</label>
+<select id="bookingFormat" name="format">
+<option>Индивидуальные занятия</option>
+<option>С подружками</option>
+<option>ECL EVA</option>
+<option>BASE ср</option>
+<option>BASE сб</option>
+<option>Помоги выбрать формат</option>
+</select>
+<label for="bookingComment">Пожелания <span>(необязательно)</span>
+</label>
+<textarea id="bookingComment" name="comment" rows="3" maxlength="1000" placeholder="Твой опыт, удобное время или вопрос">
+</textarea>
+<details class="message-preview">
+<summary>Текст сообщения</summary>
+<textarea id="bookingPreview" aria-label="Готовое сообщение для Telegram" rows="6" readonly></textarea>
+</details>
+<button class="format-button" type="submit" id="copyBooking">Скопировать сообщение</button>
+<p class="booking-note" id="bookingStatus" role="status" aria-live="polite"></p>
+<div id="telegramStep" hidden><a class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Открыть Telegram ↗</a></div>
+<p class="booking-note">Скопируй сообщение, открой чат с @evavasilyyevna и вставь текст в поле сообщения. Затем нажми «Отправить».</p>
+</form>
+<noscript>
+<p>Для записи <a href="https://t.me/evavasilyyevna">напиши Еве в Telegram</a> и укажи выбранный формат.</p>
+</noscript>
+</div>
+</dialog>
+<!-- JOURNEY -->
+<section class="journey">
+  <div class="container">
+<h2 class="section-heading">Что сделать, чтобы <span class="script-accent">потанцевать?</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <p class="step-title">Выбери формат</p>
+          <p class="step-desc">Заполни форму записи и отправь готовое сообщение в Telegram.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <p class="step-title">Обсудим детали</p>
+          <p class="step-desc">В Telegram — согласуем день и отвечу на вопросы.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <p class="step-title">Зал я бронирую сама</p>
+          <p class="step-desc">На твой вкус или мы выберем вместе.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <p class="step-title">Танцуем</p>
+          <p class="step-desc">Кайфуем час или два, расслабляемся и учим красивые хореографии.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+      Вопросы
+    </p>
+    <h2 class="section-heading">Вопрос — <span class="script-accent">ответ</span></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Я никогда не танцевала — у меня получится?</button>
+        <div class="faq-answer"><p>Абсолютно! Большинство моих учениц приходят с нуля. Индивидуальный формат как раз для этого — мы идём в вашем темпе, без спешки и сравнений с группой.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Сколько занятий нужно, чтобы увидеть результат?</button>
+        <div class="faq-answer"><p>Уже после 2-3 занятий вы почувствуете разницу в теле и уверенность в движениях. За 8 занятий можно освоить базу и начать импровизировать.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Можно ли перенести или отменить занятие?</button>
+        <div class="faq-answer"><p>Да, перенос возможен не менее чем за 3 суток до занятия. Просто напишите мне в Telegram — договоримся о новом времени.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Что входит в стоимость?</button>
+        <div class="faq-answer"><p>В стоимость входит работа преподавателя. Для индивидуальных занятий и занятий с подружками аренда зала оплачивается отдельно — от <span class="money">600₽</span>/час. Стоимость и детали групп указаны в карточках форматов.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Какие танцы мы будем изучать?</button>
+        <div class="faq-answer"><p>Основа — латина: румба, самба, ча-ча-ча, а также микс с high heels, хип-хопом, jazz funk. Программу подстраиваю под ваши пожелания — можем сфокусироваться только на латине или больше работать в партере.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Нужен ли партнёр для занятий?</button>
+        <div class="faq-answer"><p>Нет! На индивидуальных занятиях мы работаем над вашей техникой, пластикой и музыкальностью. Партнёр не нужен — я показываю всё сама.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Как происходит оплата?</button>
+        <div class="faq-answer"><p>Переводом после подтверждения записи. Можно оплатить одно занятие или сразу пакет — чем больше часов, тем выгоднее цена за час.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">А если на выбранное время не будет зала?</button>
+        <div class="faq-answer"><p>Я проверяю наличие зала после вашей записи и пишу в Telegram для подтверждения. Если зал занят — предложу ближайшее свободное время.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider">
+  <span class="line"></span>
+  <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+  <span class="line"></span>
+</div>
+
+<!-- DETAILS -->
+<section class="details">
+  <div class="container">
+    <p class="section-label">
+      <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+      Детали
+    </p>
+    <h2 class="section-heading">Что взять с собой</h2>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-icon" aria-hidden="true">✧</div>
+        <p class="detail-title">Одежда</p>
+        <p class="detail-text">Свободные штаны/лосины и топ.</p>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon" aria-hidden="true">✧</div>
+        <p class="detail-title">Обувь</p>
+        <p class="detail-text">Носочки или кроссовки.</p>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon" aria-hidden="true">✧</div>
+        <p class="detail-title">Вода</p>
+        <p class="detail-text">В зале есть кран, поэтому можно взять бутылку.</p>
+      </div>
+      <div class="detail-item">
+        <div class="detail-icon" aria-hidden="true">✧</div>
+        <p class="detail-title">Где</p>
+        <p class="detail-text">BASE — м. Павелецкая.<br>ECL EVA — м. Комсомольская.<br>Зал для индивидуальных занятий согласуем в Telegram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<noscript><p class="no-script-booking">Для записи <a href="https://t.me/evavasilyyevna">напиши Еве в Telegram</a>.</p></noscript>
+<footer>
+  <div class="footer-divider">
+    <span class="line"></span>
+    <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 0C12 0 14 9 12 12C10 9 12 0 12 0Z" fill="#ffc2b7"/><path d="M12 24C12 24 10 15 12 12C14 15 12 24 12 24Z" fill="#ffc2b7"/><path d="M0 12C0 12 9 10 12 12C9 14 0 12 0 12Z" fill="#ffc2b7"/><path d="M24 12C24 12 15 14 12 12C15 10 24 12 24 12Z" fill="#ffc2b7"/></svg>
+    <span class="line"></span>
+  </div>
+  <p>Ева · Latina choreo · Москва</p>
+  <p style="margin-top:0.4rem;">Telegram: <a href="https://t.me/evavasilyyevna" style="color:inherit;text-decoration:underline;">@evavasilyyevna</a> · Instagram: <a href="https://www.instagram.com/eva.vasilyevna" style="color:inherit;text-decoration:underline;">@eva.vasilyevna</a></p>
+</footer>
+
+<a class="mobile-booking btn" href="#booking" hidden>Записаться <span aria-hidden="true">↗</span></a>
+<script id="booking-script">
+(() => {
+  const form = document.getElementById('bookingForm');
+  const name = document.getElementById('bookingName');
+  const format = document.getElementById('bookingFormat');
+  const comment = document.getElementById('bookingComment');
+  const preview = document.getElementById('bookingPreview');
+  function message() {
+    return `Привет, Ева! Меня зовут ${name.value.trim() || '[твоё имя]'}.\nХочу записаться на занятия.\nФормат: ${format.value}.${comment.value.trim() ? `\nПожелания: ${comment.value.trim()}` : ''}\nПодскажи, пожалуйста, как записаться?`;
+  }
+  const status = document.getElementById('bookingStatus');
+  const telegramStep = document.getElementById('telegramStep');
+  const copyButton = document.getElementById('copyBooking');
+  function updatePreview() {
+    preview.value = message();
+    telegramStep.hidden = true;
+    status.textContent = '';
+  }
+  form.addEventListener('input', updatePreview);
+  form.addEventListener('change', updatePreview);
+  name.addEventListener('input', () => name.setCustomValidity(''));
+  const dialog = document.getElementById('booking');
+  const prepareButton = document.getElementById('prepareBooking');
+  prepareButton.addEventListener('click', () => {
+    form.hidden = !form.hidden;
+    prepareButton.setAttribute('aria-expanded', String(!form.hidden));
+    if (!form.hidden) name.focus({ preventScroll: true });
+  });
+  let opener = null;
+  let pagePosition = { left: 0, top: 0 };
+  function restorePagePosition() {
+    window.scrollTo({ ...pagePosition, behavior: 'instant' });
+  }
+  document.querySelectorAll('a[href="#booking"]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      if (dialog.open) return;
+      pagePosition = { left: window.scrollX, top: window.scrollY };
+      opener = link;
+      format.value = link.dataset.format || 'Помоги выбрать формат';
+      form.hidden = true;
+      prepareButton.setAttribute('aria-expanded', 'false');
+      updatePreview();
+      dialog.showModal();
+      dialog.querySelector('.booking-close').focus({ preventScroll: true });
+      restorePagePosition();
+      requestAnimationFrame(restorePagePosition);
+    });
+  });
+  dialog.querySelector('.booking-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    if (opener) opener.focus({ preventScroll: true });
+    restorePagePosition();
+    requestAnimationFrame(() => {
+      if (!dialog.open) restorePagePosition();
+    });
+  });
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    name.setCustomValidity(name.value.trim() ? '' : 'Пожалуйста, укажи своё имя.');
+    if (!form.reportValidity()) return;
+    const draft = message();
+    preview.value = draft;
+    copyButton.disabled = true;
+    try {
+      await navigator.clipboard.writeText(draft);
+      if (message() !== draft) {
+        status.textContent = 'Данные изменились — скопируй сообщение ещё раз.';
+        return;
+      }
+      status.textContent = 'Сообщение скопировано. Открой Telegram и вставь его в чат.';
+    } catch {
+      preview.closest('details').open = true;
+      preview.focus();
+      preview.select();
+      status.textContent = 'Не удалось скопировать автоматически. Скопируй выделенный текст вручную, затем открой Telegram.';
+    } finally {
+      copyButton.disabled = false;
+    }
+    telegramStep.hidden = false;
+  });
+  updatePreview();
+})();
+
+</script>
+
+
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Burger menu
+const burger = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(burger.classList.contains('open')));
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Navbar: transparent on hero, solid on scroll
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+</script>
+
+<script id="video-controls">
+
+(() => {
+  document.querySelectorAll('video').forEach(video => {
+    const silence = () => {
+      if (!video.muted) video.muted = true;
+      if (video.volume !== 0) video.volume = 0;
+    };
+    video.defaultMuted = true;
+    silence();
+    video.addEventListener('volumechange', silence);
+    video.addEventListener('play', silence);
+  });
+  document.querySelectorAll('.dance-video-card').forEach((card, index) => {
+    const video = card.querySelector('video');
+    const button = card.querySelector('.video-play');
+    const feedback = card.querySelector('.video-feedback');
+    const update = () => {
+      const playing = !video.paused && !video.ended;
+      card.classList.toggle('is-playing', playing);
+      button.setAttribute('aria-pressed', String(playing));
+      button.setAttribute('aria-label', `${playing ? 'Приостановить' : 'Воспроизвести'} видео ${index + 1}`);
+    };
+    button.addEventListener('click', async () => {
+      if (!video.paused) { video.pause(); return; }
+      feedback.textContent = 'Загружаем видео…';
+      try {
+        await video.play();
+        feedback.textContent = '';
+      } catch (error) {
+        feedback.textContent = error.name === 'AbortError' ? '' : 'Видео не загрузилось. Нажми ▶, чтобы попробовать ещё раз.';
+      }
+      update();
+    });
+    video.addEventListener('playing', () => { feedback.textContent = ''; update(); });
+    video.addEventListener('pause', update);
+    video.addEventListener('ended', () => { video.load(); update(); });
+    video.addEventListener('error', () => {
+      feedback.textContent = 'Видео не загрузилось. Попробуй обновить страницу.';
+      update();
+    });
+  });
+})();
+</script>
+<script id="gallery-controls-script">
+(() => {
+  const track = document.getElementById('dance-track');
+  const cards = [...track.querySelectorAll('.dance-video-card')];
+  const dots = [...document.querySelectorAll('.gallery-dot')];
+  const previous = document.getElementById('gallery-prev');
+  const next = document.getElementById('gallery-next');
+  let active = 0;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function position(index) {
+    return cards[index].getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft - 2;
+  }
+  function update() {
+    active = cards.reduce((best, card, index) => Math.abs(position(index) - track.scrollLeft) < Math.abs(position(best) - track.scrollLeft) ? index : best, 0);
+    dots.forEach((dot, index) => dot.setAttribute('aria-current', String(index === active)));
+    previous.disabled = active === 0;
+    next.disabled = active === cards.length - 1;
+  }
+  function go(index) {
+    index = Math.max(0, Math.min(cards.length - 1, index));
+    track.scrollTo({ left: position(index), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  }
+  dots.forEach((dot, index) => dot.addEventListener('click', () => go(index)));
+  previous.addEventListener('click', () => go(active - 1));
+  next.addEventListener('click', () => go(active + 1));
+  track.addEventListener('keydown', event => {
+    if (event.target !== track) return;
+    const target = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: cards.length - 1 }[event.key];
+    if (target === undefined) return;
+    event.preventDefault();
+    go(target);
+  });
+  let frame = 0;
+  track.addEventListener('scroll', () => {
+    if (frame) return;
+    frame = requestAnimationFrame(() => { frame = 0; update(); });
+  }, { passive: true });
+  window.addEventListener('resize', () => {
+    track.scrollTo({ left: position(active), behavior: 'instant' });
+    update();
+  });
+  update();
+  const videos = cards.map(card => card.querySelector('video'));
+  videos.forEach(video => video.addEventListener('play', () => videos.forEach(other => {
+    if (other !== video) other.pause();
+  })));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.intersectionRatio < .5) entry.target.pause();
+    }), { threshold: [0, .5] });
+    videos.forEach(video => observer.observe(video));
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) videos.forEach(video => video.pause());
+  });
+  const sticky = document.querySelector('.mobile-booking');
+  const hero = document.querySelector('.hero');
+  const syncSticky = () => { sticky.hidden = hero.getBoundingClientRect().bottom > 0; };
+  window.addEventListener('scroll', syncSticky, { passive: true });
+  window.addEventListener('resize', syncSticky);
+  syncSticky();
+})();
+</script>
+</body>
+</html>
