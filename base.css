@@ -143,3 +143,17 @@ button.base-details-link { border: 0; background: none; font-family: inherit; te
  .base-dialog .base-stories h3 { font-size: 25px; }
  .base-dialog-footer { padding: 22px 18px; }
 }
+
+/* A single burgundy surface for format cards and both dialogs. */
+:root {
+ --card-surface: linear-gradient(130deg, transparent 25%, #cf0d151c 40%, transparent 55%), radial-gradient(ellipse at 100% 0, #a5081570, transparent 50%), radial-gradient(ellipse at 0 100%, #8f071c50, transparent 55%), #0d0203;
+ --card-shadow: 0 0 3px #ff9c9560, 0 0 22px #ec132524, inset 0 0 24px #b7192517;
+}
+.glow-card, .booking, .base-stories .base-benefit { background: var(--card-surface); border-color: #ff9c95; box-shadow: var(--card-shadow); }
+.base-details { background: transparent; }
+.base-dialog-toolbar { background: #160305f5; }
+.base-close, .base-story-number, .day-options label:has(input:checked) { background: #230507; border-color: #a55054; }
+.base-stories p { color: var(--muted); }
+.base-dialog .section-heading { color: var(--ink); }
+#scheduleResult > label { margin-top: 16px; }
+.schedule-form button:disabled { opacity: .65; cursor: wait; }

@@ -244,7 +244,7 @@ body:has(dialog[open]) { overflow: hidden; }
     <a href="#" class="navbar-logo" aria-label="Ева — на главную">EVA <span>Latina choreo</span></a>
     <ul class="navbar-links">
       <li><a href="#price">Стоимость</a></li>
-      <li><a href="#booking">Запись</a></li>
+      <li><a href="#booking">Записаться</a></li>
       <li><a href="#formats">Форматы</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="https://t.me/evavasilyyevna" target="_blank">Telegram</a></li>
@@ -256,7 +256,7 @@ body:has(dialog[open]) { overflow: hidden; }
 </nav>
 <ul class="mobile-menu" id="mobileMenu">
   <li><a href="#price">Стоимость</a></li>
-  <li><a href="#booking">Запись</a></li>
+  <li><a href="#booking">Записаться</a></li>
   <li><a href="#formats">Форматы</a></li>
   <li><a href="#faq">FAQ</a></li>
   <li><a href="https://t.me/evavasilyyevna" target="_blank">Telegram</a></li>
@@ -440,7 +440,7 @@ body:has(dialog[open]) { overflow: hidden; }
 <header class="format-card-header"><span class="format-number">04 / ФОРМАТ ЗАНЯТИЙ</span><h3 id="title-base-wed">BASE · мини-группа</h3><p class="format-subtitle">Персональное внимание в небольшой группе</p></header>
 <div class="format-card-offer"><p class="format-price"><span class="rate"><span class="money">10 500 ₽</span> <small>/ месяц</small></span></p></div>
 <div class="format-card-body"><p class="base-card-intro">До 8 участниц. Персональные поправки, техника и поддержка постоянного состава.</p><ul class="format-list"><li>Среда, 19:00–21:00</li><li>4 занятия по 2 часа · 8 часов в месяц</li><li>С нуля и для продолжающих</li></ul><button class="base-details-link" id="openBaseDetails" type="button" aria-haspopup="dialog" aria-controls="base-details">Подробнее о мини-группе ↗</button></div>
-<a href="#booking" class="format-button" data-format="BASE ср">Запись ↗</a>
+<a href="#booking" class="format-button" data-format="BASE ср">Записаться ↗</a>
 </article>
 </div>
 </div>
@@ -462,7 +462,7 @@ body:has(dialog[open]) { overflow: hidden; }
 </div>
 </div>
 </div>
-<div class="base-dialog-footer"><a class="format-button" href="https://t.me/evavasilyyevna?text=%D0%95%D0%B2%D0%B0%2C%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BC%D0%B8%D0%BD%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20BASE%20%D0%BF%D0%BE%20%D1%81%D1%80%D0%B5%D0%B4%D0%B0%D0%BC.%20%D0%95%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D0%BC%D0%B5%D1%81%D1%82%D0%B0%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B9%D0%B4%D1%91%D1%82%20%D0%BB%D0%B8%20%D0%BC%D0%BD%D0%B5%20%D1%8D%D1%82%D0%BE%D1%82%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%3F" target="_blank" rel="noopener noreferrer">Запись в BASE ↗</a></div>
+<div class="base-dialog-footer"><a class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Записаться ↗</a></div>
 </dialog>
 
 <section class="schedule-request" id="suggest-time" aria-labelledby="schedule-title">
@@ -482,10 +482,10 @@ body:has(dialog[open]) { overflow: hidden; }
 </div><p class="base-small" id="scheduleDaysHint">Выбери один или несколько дней.</p></fieldset>
 <label for="scheduleTime">Удобное время</label><input id="scheduleTime" name="time" maxlength="200" required placeholder="Например: после 19:00">
 <label for="scheduleLevel">Уровень подготовки</label><select id="scheduleLevel" name="level" required><option value="">Выбери свой уровень</option><option>С нуля</option><option>Продолжающая</option><option>Не уверена — хочу обсудить</option></select>
-<button type="submit" class="format-button">Открыть Telegram с сообщением ↗</button>
-<p class="base-small">Откроется чат с Евой. Проверь сообщение и нажми «Отправить» в Telegram.</p>
+<button type="submit" class="format-button">Скопировать сообщение</button>
+<p class="base-small">Скопируй сообщение, затем открой Telegram и вставь его в чат с Евой.</p>
 <p id="scheduleStatus" class="base-small" role="status"></p>
-<details id="scheduleResult" hidden><summary>Текст сообщения и ссылка на чат</summary><textarea id="schedulePreview" rows="6" readonly aria-label="Сообщение о желаемом времени"></textarea><a id="scheduleTelegram" class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Перейти в Telegram ↗</a></details>
+<div id="scheduleResult" hidden><label for="schedulePreview">Твоё сообщение</label><textarea id="schedulePreview" rows="6" readonly aria-label="Сообщение о желаемом времени"></textarea><a id="scheduleTelegram" class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Открыть Telegram ↗</a></div>
 </form>
 <noscript><p class="base-small">Для предложения времени <a href="https://t.me/evavasilyyevna">напиши Еве в Telegram</a>: укажи имя, удобные дни, время и уровень подготовки.</p></noscript>
 </details>

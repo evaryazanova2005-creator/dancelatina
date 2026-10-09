@@ -19,18 +19,34 @@
     result.hidden = true;
     status.textContent = '';
   });
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', async event => {
     event.preventDefault();
     validate();
     if (!form.reportValidity()) return;
     const selectedDays = days.filter(day => day.checked).map(day => day.value).join(', ');
     const message = `Ева, привет! Мне интересна мини-группа. Мне было бы удобно заниматься: ${selectedDays}, ${time.value.trim()}.\nМеня зовут ${name.value.trim()}.\nУровень подготовки: ${level.value}.`;
-    const url = `https://t.me/evavasilyyevna?text=${encodeURIComponent(message)}`;
     preview.value = message;
-    link.href = url;
-    result.hidden = false;
-    status.textContent = 'Если Telegram не открылся, воспользуйся ссылкой ниже. Отправка сообщения — в Telegram.';
-    window.open(url, '_blank', 'noopener,noreferrer');
+    link.href = 'https://t.me/evavasilyyevna';
+    const submit = form.querySelector('button[type="submit"]');
+    submit.disabled = true;
+    const snapshot = JSON.stringify([...new FormData(form)]);
+    try {
+      await navigator.clipboard.writeText(message);
+      if (snapshot !== JSON.stringify([...new FormData(form)])) {
+        status.textContent = 'Данные изменились — скопируй сообщение ещё раз.';
+        return;
+      }
+      result.hidden = false;
+      status.textContent = 'Сообщение скопировано. Нажми «Открыть Telegram» и вставь текст в чат.';
+    } catch {
+      if (snapshot !== JSON.stringify([...new FormData(form)])) return;
+      result.hidden = false;
+      preview.focus();
+      preview.select();
+      status.textContent = 'Скопируй выделенный текст вручную, затем открой Telegram и вставь его в чат.';
+    } finally {
+      submit.disabled = false;
+    }
   });
   validate();
 })();
