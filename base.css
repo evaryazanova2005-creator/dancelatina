@@ -1,0 +1,145 @@
+/* BASE uses the existing palette, typography and luminous borders. */
+.format-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.format-card, .format-card:nth-child(-n+2), .format-card:last-child { grid-column: auto; }
+.base-card-intro { color: var(--muted); font-size: 14px; }
+.base-lead { max-width: 760px; color: var(--muted); font-size: 18px; line-height: 1.8; }
+.base-stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; margin-top: 40px; }
+.base-stories article { border-top: 1px solid #a5505466; padding-top: 20px; }
+.base-story-number { font: 14px/1 var(--display); color: var(--rose); }
+.base-stories p { color: var(--muted); margin-top: 14px; }
+.base-small, .base-stories .base-small { font-size: 12px; line-height: 1.7; color: var(--muted); }
+.base-summary-card { padding: clamp(24px, 4vw, 48px); }
+.base-numbers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 32px 0 20px; }
+.base-offer { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; border-top: 1px solid #a5505477; padding-top: 28px; margin-top: 28px; }
+.base-offer p:not(.format-price) { margin-top: 8px; }
+.base-offer .format-button { margin-top: 20px; }
+.schedule-layout { display: grid; grid-template-columns: 1.1fr 1fr; align-items: start; gap: 48px; }
+.schedule-details { min-width: 0; }
+.schedule-details > summary { width: 100%; }
+.schedule-details > summary::after { content: '+'; margin-left: 16px; }
+.schedule-details[open] > summary::after { content: '−'; }
+.schedule-details > summary::-webkit-details-marker { display: none; }
+.schedule-form label, .schedule-form legend { display: block; margin: 18px 0 7px; font-size: 14px; }
+.schedule-form input:not([type=checkbox]), .schedule-form select, .schedule-form textarea { display: block; width: 100%; min-width: 0; padding: 12px; background: #17090b; color: var(--ink); border: 1px solid #9d6660; border-radius: 9px; font: 16px/1.5 var(--body); }
+.schedule-form fieldset { border: 0; min-width: 0; }
+.day-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.day-options label { display: flex; align-items: center; gap: 6px; margin: 0; padding: 8px 10px; min-height: 44px; border: 1px solid #a55054; border-radius: 9px; cursor: pointer; }
+.day-options label:has(input:checked) { background: #660b15; border-color: var(--rose); }
+.day-options input { width: 16px; height: 16px; accent-color: #a63349; }
+.schedule-form .format-button { width: 100%; margin: 20px 0 12px; }
+.schedule-form .base-small { margin-top: 8px; }
+.schedule-form textarea { margin-top: 12px; resize: vertical; }
+#scheduleResult { margin-top: 16px; }
+#scheduleResult summary { cursor: pointer; font-size: 14px; }
+@media (max-width: 850px) {
+ .schedule-layout { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+ body:has(.schedule-details[open]) .mobile-booking { display: none; }
+ .base-lead { font-size: 16px; }
+ .base-stories { gap: 28px; margin-top: 28px; }
+ .base-stories h3 { font-size: 27px; }
+ .base-stories p { font-size: 14px; }
+ .base-numbers { gap: 22px; }
+ .base-numbers > div { border-top: 1px solid #a5505444; padding-top: 18px; }
+ .base-offer { gap: 16px; }
+ .base-offer .format-button { width: 100%; }
+}
+
+/* Shared rows align headings, prices, content and buttons across each pair. */
+.format-grid { gap: 28px 24px; }
+.format-card, .format-card:nth-child(-n+2), .format-card:last-child {
+ display: grid; grid-template-rows: subgrid; grid-row: span 4; row-gap: 0;
+ padding: 28px; min-width: 0;
+}
+.format-card-header { padding-bottom: 24px; border-bottom: 1px solid #d6978e88; }
+.format-number { display: block; margin-bottom: 16px; }
+.format-card h3 { font-size: clamp(28px, 3vw, 37px); line-height: 1.16; overflow-wrap: normal; }
+.format-card .format-subtitle { margin-top: 12px; font-size: 17px; line-height: 1.5; }
+.format-card-offer { padding: 24px 0; }
+.money { font-family: var(--display); font-variant-numeric: lining-nums tabular-nums; font-feature-settings: 'lnum' 1, 'tnum' 1; letter-spacing: -.025em; }
+.format-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-family: var(--body); font-size: clamp(32px, 3.3vw, 40px); line-height: 1.2; font-variant-numeric: lining-nums tabular-nums; letter-spacing: -.035em; }
+.format-price small { font: 400 14px/1.5 var(--body); letter-spacing: 0; }
+.format-card .hall-note { margin: 12px 0 0; font-size: 13px; line-height: 1.7; }
+.format-card-body { padding: 0 0 24px; }
+.format-card-body > h4:first-child { margin-top: 0; }
+.format-card-body > .format-list:last-child { margin-bottom: 0; }
+.format-card > .format-button { margin: 0; align-self: stretch; min-height: 48px; }
+.packages > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; padding: 10px 12px; font: 400 15px/1.5 var(--body); }
+.packages dd { text-align: right; }
+.packages .money { font-size: 18px; }
+.base-stories h3 { font: 400 29px/1.2 var(--display); letter-spacing: -.025em; margin: 14px 0; text-wrap: balance; }
+.base-numbers { align-items: start; gap: 32px; }
+.base-numbers dt { display: grid; grid-template-rows: 88px auto; gap: 14px; }
+.stat-value { display: flex; align-items: baseline; gap: 10px; color: var(--rose); font: 400 72px/1 var(--display); font-variant-numeric: lining-nums tabular-nums; font-feature-settings: 'lnum' 1, 'tnum' 1; letter-spacing: -.04em; }
+.stat-prefix { font: 400 21px/1 var(--display); letter-spacing: 0; }
+.stat-label { font: 400 23px/1.3 var(--display); }
+.base-numbers dd { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.base-offer { align-items: start; }
+.base-offer > div { min-width: 0; }
+.base-offer > div:last-child > p:first-child { margin-top: 0; }
+@keyframes gentle-entry { from { opacity: .25; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: no-preference) {
+ .reveal-in { animation: gentle-entry 650ms cubic-bezier(.2,.65,.3,1) both; }
+}
+@media (max-width: 850px) and (min-width: 601px) {
+ .format-card { padding: 24px 20px; }
+ .format-card h3 { font-size: 28px; }
+ .base-numbers { gap: 20px; }
+ .stat-label { font-size: 20px; }
+}
+@media (max-width: 600px) {
+ .format-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+ .base-stories, .base-numbers, .base-offer { grid-template-columns: minmax(0, 1fr); }
+ .format-card, .format-card:nth-child(-n+2), .format-card:last-child { grid-row: auto; grid-template-rows: auto; padding: 26px 22px; }
+ .format-card h3 { font-size: 30px; }
+ .format-price { font-size: 34px; gap: 7px; }
+ .format-price small { font-size: 13px; }
+ .base-numbers { gap: 24px; }
+ .base-numbers dt { grid-template-rows: 62px auto; gap: 8px; }
+ .stat-value { font-size: 56px; }
+ .stat-label { font-size: 22px; }
+ .base-numbers dd { margin-top: 6px; }
+}
+
+/* Keep the amount, currency and billing unit on one line at every width. */
+.rate { display: inline-block; white-space: nowrap; overflow-wrap: normal; word-break: normal; }
+.format-price { font-family: var(--display); }
+.format-price .rate { display: inline-flex; align-items: baseline; gap: 7px; }
+.base-details-link { display: inline-block; color: var(--rose); text-underline-offset: 5px; font-size: 13px; padding: 12px 0 0; }
+.base-summary { padding-bottom: 20px; }
+.base-summary-card { background: radial-gradient(ellipse at 100% 0, #bd183d77, transparent 65%), linear-gradient(130deg, #440a18, #190308 70%); }
+.base-details { padding-top: 28px; background: radial-gradient(ellipse at 5% 45%, #7e102b55, transparent 65%); }
+.base-details > .container > .section-label { margin-bottom: 16px; }
+.base-details .section-heading { max-width: 850px; color: #ffe1d5; text-shadow: 0 0 32px #f45b6233; }
+.base-stories { gap: 24px; margin-top: 36px; }
+.base-stories .base-benefit { padding: 30px; border: 1px solid #f3a293; background: radial-gradient(ellipse at 100% 0, #d62e4d44, transparent 65%), linear-gradient(135deg, #5f1025, #24060e 85%); box-shadow: 0 0 24px #df274529, inset 0 0 36px #e8364812; }
+.base-story-number { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #ffb7a588; border-radius: 50%; background: #a72b4444; font: 400 20px/1 var(--display); font-variant-numeric: lining-nums; }
+.base-stories h3 { font-size: clamp(25px, 2.7vw, 33px); line-height: 1.25; margin: 20px 0 16px; }
+.base-stories p { color: #efd0c9; font-size: 15px; line-height: 1.85; margin-top: 12px; }
+.base-stories .base-small { color: var(--muted); font-size: 12px; }
+@media (max-width: 600px) {
+ .base-stories .base-benefit { padding: 25px 22px; }
+ .base-stories h3 { font-size: 27px; }
+ .base-stories p { font-size: 14px; }
+ .base-details .section-heading { font-size: 32px; }
+ .format-price { font-size: clamp(29px, 8.7vw, 34px); }
+}
+
+/* BASE details are available on demand without lengthening the main page. */
+button.base-details-link { border: 0; background: none; font-family: inherit; text-decoration: underline; cursor: pointer; text-align: left; min-height: 44px; }
+.base-dialog { width: min(1000px, calc(100% - 32px)); padding: 0; }
+.base-dialog-toolbar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; padding: 12px 18px; background: #21060ef5; backdrop-filter: blur(12px); border-bottom: 1px solid #a5505455; }
+.base-close { min-height: 44px; padding: 8px 16px; border: 1px solid #c88780; border-radius: 30px; background: #390b18; color: var(--ink); cursor: pointer; font-size: 14px; }
+.base-dialog .base-details { padding: 26px 32px 0; }
+.base-dialog .section-heading { font: 400 clamp(28px, 4vw, 44px)/1.2 var(--display); margin: 0 0 24px; }
+.base-dialog .base-stories { margin-top: 24px; }
+.base-dialog-footer { padding: 24px 32px 32px; }
+.base-dialog-footer .format-button { width: 100%; }
+@media (max-width: 600px) {
+ .base-dialog .base-details { padding: 20px 18px 0; }
+ .base-dialog .base-stories { gap: 20px; }
+ .base-dialog .base-benefit { padding: 22px 18px; }
+ .base-dialog .base-stories h3 { font-size: 25px; }
+ .base-dialog-footer { padding: 22px 18px; }
+}

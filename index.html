@@ -234,6 +234,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 
 </style>
+<link rel="stylesheet" href="base.css">
 </head>
 <body>
 
@@ -415,140 +416,82 @@ body:has(dialog[open]) { overflow: hidden; }
 <a href="#format-friends">С подружкой</a>
 <a href="#format-ecl">ECL EVA</a>
 <a href="#format-base-wed">BASE ср</a>
-<a href="#format-base-sat">BASE сб</a>
 </nav>
 <div class="format-grid" id="all-formats">
 <article class="format-card glow-card" id="format-individual" aria-labelledby="title-individual">
-<span class="format-number">01 / ФОРМАТ ЗАНЯТИЙ</span>
-<h3 id="title-individual">Индивидуальные занятия</h3>
-
-<div class="format-rule">
-</div>
-<p class="format-price"><span class="money">2500₽</span> <small>/ час</small>
-</p>
-<p class="hall-note">+ аренда зала отдельно<br>зал от <span class="money">600₽</span> / час</p>
-<h4>Пакеты занятий</h4>
-<dl class="packages">
-<div>
-<dt>5–7 часов</dt>
-<dd><span class="money">2300₽</span> <small>/ час</small>
-</dd>
-</div>
-<div>
-<dt>8–10 часов</dt>
-<dd><span class="money">2100₽</span> <small>/ час</small>
-</dd>
-</div>
-<div>
-<dt>от 11 часов</dt>
-<dd><span class="money">1900₽</span> <small>/ час</small>
-</dd>
-</div>
-</dl>
-<h4>Что входит</h4>
-<ul class="format-list">
-<li>База</li>
-<li>Разбор хореографии</li>
-<li>Танец под настроение или событие</li>
-</ul>
-<p class="format-meta">Стиль: Latina choreo<br>Уровень: с нуля / продолжающие</p>
+<header class="format-card-header"><span class="format-number">01 / ФОРМАТ ЗАНЯТИЙ</span><h3 id="title-individual">Индивидуальные занятия</h3><p class="format-subtitle">Программа под твой запрос</p></header>
+<div class="format-card-offer"><p class="format-price"><span class="rate"><span class="money">2 500 ₽</span> <small>/ час</small></span></p><p class="hall-note">Аренда зала отдельно — от <span class="rate"><span class="money">600 ₽</span> / час</span></p></div>
+<div class="format-card-body"><h4>Пакеты занятий</h4><dl class="packages"><div><dt>5–7 часов</dt><dd><span class="rate"><span class="money">2 300 ₽</span> <small>/ час</small></span></dd></div><div><dt>8–10 часов</dt><dd><span class="rate"><span class="money">2 100 ₽</span> <small>/ час</small></span></dd></div><div><dt>от 11 часов</dt><dd><span class="rate"><span class="money">1 900 ₽</span> <small>/ час</small></span></dd></div></dl><ul class="format-list"><li>Программа под личный запрос</li><li>Самый быстрый персональный прогресс</li><li>Темп и сложность полностью под тебя</li></ul></div>
 <a href="#booking" class="format-button" data-format="Индивидуальные занятия">Записаться ↗</a>
 </article>
 <article class="format-card glow-card" id="format-friends" aria-labelledby="title-friends">
-<span class="format-number">02 / ФОРМАТ ЗАНЯТИЙ</span>
-<h3 id="title-friends">С подружками</h3>
-<p class="format-subtitle">Формат 2–4 человека</p>
-<div class="format-rule">
-</div>
-<dl class="packages friends-prices">
-<div>
-<dt>2 человека</dt>
-<dd><span class="money">2200₽</span> <small>/ час</small>
-</dd>
-</div>
-<div>
-<dt>3 человека</dt>
-<dd><span class="money">2000₽</span> <small>/ час</small>
-</dd>
-</div>
-<div>
-<dt>4 человека</dt>
-<dd><span class="money">1800₽</span> <small>/ час</small>
-</dd>
-</div>
-</dl>
-<p class="hall-note">Стоимость указана с человека.<br>+ аренда зала отдельно<br>зал от <span class="money">600₽</span> / час</p>
-<ul class="format-list">
-<li>Уровень: с нуля / продолжающие</li>
-<li>Занятие своим составом</li>
-</ul>
+<header class="format-card-header"><span class="format-number">02 / ФОРМАТ ЗАНЯТИЙ</span><h3 id="title-friends">С подружками</h3><p class="format-subtitle">Занятия своим составом · 2–4 человека</p></header>
+<div class="format-card-offer"><p class="format-price"><small>от</small><span class="rate"><span class="money">1 800 ₽</span> <small>/ час</small></span></p><p class="hall-note">С человека. Аренда зала отдельно — от <span class="rate"><span class="money">600 ₽</span> / час</span></p></div>
+<div class="format-card-body"><h4>Стоимость с человека</h4><dl class="packages friends-prices"><div><dt>2 человека</dt><dd><span class="rate"><span class="money">2 200 ₽</span> <small>/ час</small></span></dd></div><div><dt>3 человека</dt><dd><span class="rate"><span class="money">2 000 ₽</span> <small>/ час</small></span></dd></div><div><dt>4 человека</dt><dd><span class="rate"><span class="money">1 800 ₽</span> <small>/ час</small></span></dd></div></dl><ul class="format-list"><li>Можно заниматься своим составом</li><li>С нуля и для продолжающих</li></ul></div>
 <a href="#booking" class="format-button" data-format="С подружками">Записаться ↗</a>
 </article>
 <article class="format-card glow-card" id="format-ecl" aria-labelledby="title-ecl">
-<span class="format-number">03 / ФОРМАТ ЗАНЯТИЙ</span>
-<h3 id="title-ecl">ECL EVA</h3>
-<p class="format-subtitle">Закрытая постоянная группа</p>
-<div class="format-rule">
-</div>
-<p class="format-price"><span class="money">6500₽</span> <small>/ месяц</small>
-</p>
-<ul class="format-list">
-<li>Пятница, 19:00–21:00</li>
-<li>8 часов занятий в месяц</li>
-<li>м. Комсомольская</li>
-<li>Уровень: с нуля / продолжающие</li>
-</ul>
+<header class="format-card-header"><span class="format-number">03 / ФОРМАТ ЗАНЯТИЙ</span><h3 id="title-ecl">ECL EVA</h3><p class="format-subtitle">Хореографии Latina choreo<br>Группа 30 человек</p></header>
+<div class="format-card-offer"><p class="format-price"><span class="rate"><span class="money">6 500 ₽</span> <small>/ месяц</small></span></p></div>
+<div class="format-card-body"><p class="base-card-intro">Учим хореографии Latina choreo в большой постоянной группе. Подходит с нуля и продолжающим.</p><ul class="format-list"><li>Пятница, 19:00–21:00</li><li>4 занятия по 2 часа · 8 часов в месяц</li><li>м. Комсомольская</li></ul></div>
 <a href="#booking" class="format-button" data-format="ECL EVA">Записаться ↗</a>
 </article>
 <article class="format-card glow-card" id="format-base-wed" aria-labelledby="title-base-wed">
-<span class="format-number">04 / ФОРМАТ ЗАНЯТИЙ</span>
-<h3 id="title-base-wed">BASE ср</h3>
-<p class="format-subtitle">Мини-группа</p>
-<div class="format-rule">
-</div>
-<p class="format-price"><span class="money">8000₽</span> <small>/ месяц</small>
-</p>
-<ul class="format-list">
-<li>Среда, 19:00–21:00</li>
-<li>8 часов занятий в месяц</li>
-<li>До 7 человек</li>
-<li>м. Павелецкая</li>
-<li>Уровень: с нуля / продолжающие</li>
-</ul>
-<h4>В формате BASE входит</h4>
-<ul class="format-list">
-<li>Индивидуальные занятия для участниц — <span class="money">2000₽</span> / час</li>
-<li>Творческие задания и съёмки</li>
-<li>Комьюнити и поддержка</li>
-</ul>
-<a href="#booking" class="format-button" data-format="BASE ср">Записаться ↗</a>
-</article>
-<article class="format-card glow-card" id="format-base-sat" aria-labelledby="title-base-sat">
-<span class="format-number">05 / ФОРМАТ ЗАНЯТИЙ</span>
-<h3 id="title-base-sat">BASE сб</h3>
-<p class="format-subtitle">Мини-группа</p>
-<div class="format-rule">
-</div>
-<p class="format-price"><span class="money">8000₽</span> <small>/ месяц</small>
-</p>
-<ul class="format-list">
-<li>Суббота, 13:00–15:00</li>
-<li>8 часов занятий в месяц</li>
-<li>До 7 человек</li>
-<li>м. Павелецкая</li>
-<li>Уровень: с нуля / продолжающие</li>
-</ul>
-<h4>В формате BASE входит</h4>
-<ul class="format-list">
-<li>Индивидуальные занятия для участниц — <span class="money">2000₽</span> / час</li>
-<li>Творческие задания и съёмки</li>
-<li>Комьюнити и поддержка</li>
-</ul>
-<a href="#booking" class="format-button" data-format="BASE сб">Записаться ↗</a>
+<header class="format-card-header"><span class="format-number">04 / ФОРМАТ ЗАНЯТИЙ</span><h3 id="title-base-wed">BASE · мини-группа</h3><p class="format-subtitle">Персональное внимание в небольшой группе</p></header>
+<div class="format-card-offer"><p class="format-price"><span class="rate"><span class="money">10 500 ₽</span> <small>/ месяц</small></span></p></div>
+<div class="format-card-body"><p class="base-card-intro">До 8 участниц. Персональные поправки, техника и поддержка постоянного состава.</p><ul class="format-list"><li>Среда, 19:00–21:00</li><li>4 занятия по 2 часа · 8 часов в месяц</li><li>С нуля и для продолжающих</li></ul><button class="base-details-link" id="openBaseDetails" type="button" aria-haspopup="dialog" aria-controls="base-details">Подробнее о мини-группе ↗</button></div>
+<a href="#booking" class="format-button" data-format="BASE ср">Запись ↗</a>
 </article>
 </div>
 </div>
 </section>
+
+
+<dialog class="booking base-dialog" id="base-details" aria-labelledby="base-title">
+<div class="base-dialog-toolbar"><button type="button" class="base-close" aria-label="Закрыть подробности BASE" autofocus>Закрыть ×</button></div>
+<div class="base-details">
+<div class="container">
+<p class="section-label">О формате BASE</p>
+<h2 class="section-heading" id="base-title">Когда хочется больше внимания, но не один на один</h2>
+
+<div class="base-stories">
+<article class="glow-card base-benefit"><span class="base-story-number" aria-hidden="true">01</span><h3>Не только повторять, но и разбираться</h3><p>Мы вместе учим хореографию, а я работаю с тем, как она получается у каждой: замечаю сложности, объясняю, что поправить.</p><p>Персональные поправки и более глубокая проработка техники — чтобы понимать движение и чувствовать свой прогресс.</p></article>
+<article class="glow-card base-benefit"><span class="base-story-number" aria-hidden="true">02</span><h3>Небольшой постоянный состав</h3><p>Закрытый формат, в котором мы постепенно узнаём друг друга, а я — твой темп, сильные стороны и то, над чем стоит поработать.</p><p>Камерное комьюнити и поддержка: можно пробовать, задавать вопросы и раскрываться в своём ритме.</p></article>
+<article class="glow-card base-benefit"><span class="base-story-number" aria-hidden="true">03</span><h3>Общение не заканчивается после занятия</h3><p>Встречаемся вне танцев: рисуем, идём на ужин или выбираем другие активности. А ещё — творческие задания и съёмки, чтобы создавать что-то вместе.</p></article>
+<article class="glow-card base-benefit"><span class="base-story-number" aria-hidden="true">04</span><h3>Свои условия на индивидуальные занятия</h3><p>Если хочется отдельно разобрать движение или поработать над личным запросом, для участниц BASE индивидуальные занятия — по специальной цене <span class="rate"><span class="money">2 000 ₽</span> / час</span>.</p><p class="base-small">Аренда зала для индивидуального занятия оплачивается отдельно.</p></article>
+</div>
+</div>
+</div>
+<div class="base-dialog-footer"><a class="format-button" href="https://t.me/evavasilyyevna?text=%D0%95%D0%B2%D0%B0%2C%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%BC%D0%B8%D0%BD%D0%B8-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5%20BASE%20%D0%BF%D0%BE%20%D1%81%D1%80%D0%B5%D0%B4%D0%B0%D0%BC.%20%D0%95%D1%81%D1%82%D1%8C%20%D0%BB%D0%B8%20%D0%BC%D0%B5%D1%81%D1%82%D0%B0%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B9%D0%B4%D1%91%D1%82%20%D0%BB%D0%B8%20%D0%BC%D0%BD%D0%B5%20%D1%8D%D1%82%D0%BE%D1%82%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%3F" target="_blank" rel="noopener noreferrer">Запись в BASE ↗</a></div>
+</dialog>
+
+<section class="schedule-request" id="suggest-time" aria-labelledby="schedule-title">
+<div class="container schedule-layout">
+<div><p class="section-label">Давай найдём время</p><h2 class="section-heading" id="schedule-title">Хочется в мини-группу, но среда не подходит?</h2><p class="base-lead">Напиши, в какие дни и часы тебе было бы удобно заниматься. Я собираю пожелания для возможного запуска ещё одной группы.</p></div>
+<details class="schedule-details"><summary class="format-button">Предложить своё время</summary>
+<form id="scheduleForm" class="schedule-form">
+<label for="scheduleName">Имя</label><input id="scheduleName" name="name" autocomplete="given-name" maxlength="80" required placeholder="Как тебя зовут">
+<fieldset><legend>Удобные дни недели</legend><div class="day-options">
+<label><input type="checkbox" name="days" value="Понедельник" aria-describedby="scheduleDaysHint"><span>Пн</span></label>
+<label><input type="checkbox" name="days" value="Вторник" aria-describedby="scheduleDaysHint"><span>Вт</span></label>
+<label><input type="checkbox" name="days" value="Среда" aria-describedby="scheduleDaysHint"><span>Ср</span></label>
+<label><input type="checkbox" name="days" value="Четверг" aria-describedby="scheduleDaysHint"><span>Чт</span></label>
+<label><input type="checkbox" name="days" value="Пятница" aria-describedby="scheduleDaysHint"><span>Пт</span></label>
+<label><input type="checkbox" name="days" value="Суббота" aria-describedby="scheduleDaysHint"><span>Сб</span></label>
+<label><input type="checkbox" name="days" value="Воскресенье" aria-describedby="scheduleDaysHint"><span>Вс</span></label>
+</div><p class="base-small" id="scheduleDaysHint">Выбери один или несколько дней.</p></fieldset>
+<label for="scheduleTime">Удобное время</label><input id="scheduleTime" name="time" maxlength="200" required placeholder="Например: после 19:00">
+<label for="scheduleLevel">Уровень подготовки</label><select id="scheduleLevel" name="level" required><option value="">Выбери свой уровень</option><option>С нуля</option><option>Продолжающая</option><option>Не уверена — хочу обсудить</option></select>
+<button type="submit" class="format-button">Открыть Telegram с сообщением ↗</button>
+<p class="base-small">Откроется чат с Евой. Проверь сообщение и нажми «Отправить» в Telegram.</p>
+<p id="scheduleStatus" class="base-small" role="status"></p>
+<details id="scheduleResult" hidden><summary>Текст сообщения и ссылка на чат</summary><textarea id="schedulePreview" rows="6" readonly aria-label="Сообщение о желаемом времени"></textarea><a id="scheduleTelegram" class="format-button" href="https://t.me/evavasilyyevna" target="_blank" rel="noopener noreferrer">Перейти в Telegram ↗</a></details>
+</form>
+<noscript><p class="base-small">Для предложения времени <a href="https://t.me/evavasilyyevna">напиши Еве в Telegram</a>: укажи имя, удобные дни, время и уровень подготовки.</p></noscript>
+</details>
+</div>
+</section>
+
 <dialog class="booking" id="booking" aria-labelledby="booking-title">
 <div class="booking-card">
 <button class="booking-close" type="button" aria-label="Закрыть окно записи" autofocus>×</button>
@@ -569,7 +512,6 @@ body:has(dialog[open]) { overflow: hidden; }
 <option>С подружками</option>
 <option>ECL EVA</option>
 <option>BASE ср</option>
-<option>BASE сб</option>
 <option>Помоги выбрать формат</option>
 </select>
 <label for="bookingComment">Пожелания <span>(необязательно)</span>
@@ -657,7 +599,7 @@ body:has(dialog[open]) { overflow: hidden; }
       </div>
       <div class="faq-item">
         <button class="faq-question">Что входит в стоимость?</button>
-        <div class="faq-answer"><p>В стоимость входит работа преподавателя. Для индивидуальных занятий и занятий с подружками аренда зала оплачивается отдельно — от <span class="money">600₽</span>/час. Стоимость и детали групп указаны в карточках форматов.</p></div>
+        <div class="faq-answer"><p>В стоимость входит работа преподавателя. Для индивидуальных занятий и занятий с подружками аренда зала оплачивается отдельно — от <span class="rate"><span class="money">600 ₽</span> / час</span>. Стоимость и детали групп указаны в карточках форматов.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Какие танцы мы будем изучать?</button>
@@ -712,7 +654,7 @@ body:has(dialog[open]) { overflow: hidden; }
       <div class="detail-item">
         <div class="detail-icon" aria-hidden="true">✧</div>
         <p class="detail-title">Где</p>
-        <p class="detail-text">BASE — м. Павелецкая.<br>ECL EVA — м. Комсомольская.<br>Зал для индивидуальных занятий согласуем в Telegram.</p>
+        <p class="detail-text">ECL EVA — м. Комсомольская.<br>Зал для индивидуальных занятий согласуем в Telegram.</p>
       </div>
     </div>
   </div>
@@ -965,5 +907,6 @@ window.addEventListener('scroll', () => {
   syncSticky();
 })();
 </script>
+<script src="base.js" defer></script>
 </body>
 </html>
